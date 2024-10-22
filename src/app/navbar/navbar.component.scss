@@ -2,62 +2,28 @@
   --ds-expandable-navbar-height: auto;
 
   nav.navbar {
-    background-color: var(--ds-navbar-bg);
+    background-color: #f8f9fa; // Cambiado a un color específico
     align-items: baseline;
-    padding: 0;
+    padding: 1rem; // Aumentar el padding
   }
 
-  /** Mobile menu styling **/
-  @media screen and (max-width: map-get($grid-breakpoints, md)-0.02) {
+  @media screen and (max-width: 768px) { // Cambiar a un breakpoint específico
     .navbar {
-      width: 100vw;
-      background-color: var(--bs-white);
-      position: absolute;
-      overflow: hidden;
-      height: 0;
-      z-index: var(--ds-nav-z-index);
+      width: 100%;
+      background-color: #ffffff; // Asegúrate de que coincida con el diseño
+      height: auto; // Cambiar a auto para el diseño móvil
       &.open {
-        height: auto;
-        min-height: 100vh; //doesn't matter because wrapper is sticky
-        border-bottom: 1px var(--ds-header-navbar-border-bottom-color) solid; // open navbar covers header-navbar-wrapper border
+        min-height: 100vh;
       }
-    }
-  }
-
-  @media screen and (min-width: map-get($grid-breakpoints, md)) {
-    .reset-padding-md {
-      margin-left: calc(var(--bs-spacer) / -1);
-      margin-right: calc(var(--bs-spacer) / -1);
-    }
-  }
-
-  /* TODO remove when https://github.com/twbs/bootstrap/issues/24726 is fixed */
-  .navbar-expand-md.navbar-container {
-    @media screen and (max-width: map-get($grid-breakpoints, md)-0.02) {
-      > .navbar-inner-container {
-        padding: 0 var(--bs-spacer);
-      }
-      padding: 0;
     }
   }
 
   #main-navbar ::ng-deep {
-    .ds-menu-item, .ds-menu-toggler-wrapper {
-      white-space: nowrap;
-      text-decoration: none;
-    }
-
-    .dropdown-menu {
-      padding: 0.5rem !important;
-    }
-
     .ds-menu-item {
-      display: block;
-      color: var(--ds-navbar-link-color);
-      padding: 0.5rem 0;
-
+      color: #343a40; // Cambiar color de texto
+      padding: 1rem; // Ajustar padding
       &:hover, &:focus {
-        color: var(--ds-navbar-link-color-hover);
+        color: #007bff; // Cambiar color al hacer hover
       }
     }
   }

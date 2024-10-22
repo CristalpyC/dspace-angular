@@ -6,7 +6,7 @@
       height: var(--ds-header-height);
     }
 
-    background-color: var(--ds-header-bg);
+    background-color: #dadff0;
 
     &-container {
       min-height: var(--ds-header-height);
@@ -14,7 +14,8 @@
   }
 
   img#header-logo {
-    height: var(--ds-header-logo-height);
+    width: 8rem;
+    height: 8rem; //var(--ds-header-logo-height);
   }
 
   button#navbar-toggler {
@@ -24,5 +25,4 @@
       color: var(--ds-header-icon-color-hover);
     }
   }
-
 }

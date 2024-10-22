@@ -55,7 +55,12 @@ $info:      #1e6f90;  // Light blue
 $warning:   #ec9433;  // Orange
 $danger:    #cf4444;  // Red
 $light:     #f8f9fa;  // As Bootstrap $gray-100
-$dark:      #43515f;  // Gray
+$dark:      #43515f; // Gray
+
+// extra colors
+$redDark: #771c25;
+$redLight: #8c212b;
+$blueLight: #dadff0;
 
 // Add new semantic colors here (you don't need to add existing semantic colors)
 $theme-colors: (
