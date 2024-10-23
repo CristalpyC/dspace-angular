@@ -13,3 +13,10 @@
 .dropdown-item {
   cursor: pointer;
 }
+
+.language-select-container select {
+  width: 3rem; /* Ajusta el ancho automáticamente al contenido */
+  padding: 0.25rem 0.5rem; /* Espaciado más pequeño */
+  font-size: 0.875rem; /* Tamaño de texto más pequeño */
+  padding: .5px;
+}

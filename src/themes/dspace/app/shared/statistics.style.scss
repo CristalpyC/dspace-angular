@@ -1,0 +1,53 @@
+:host{
+    .statistics-card-container{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 2px;
+        position: relative;
+        bottom: 5rem;
+        z-index: 1;
+    
+        div{
+            text-align: center;
+            background-color: #fff;
+            margin-top: 1rem;
+            width: 15rem;
+            height: 8rem;
+            box-shadow: 0px 2px 5px #d5d5d7;
+            padding: 1rem;
+            margin-left: 5px;
+            transition: ease-in-out 1s;
+            border-bottom: 5px solid #8c212b;
+            border-radius: .5rem;
+            color: #7f7f7f;
+    
+          
+            h2{
+                font-weight: 400;
+                color: #8c212b;
+                margin-top: 1rem;
+            }
+    
+            p{
+                font-size: 2vmin;
+            }
+        }
+    }
+    
+    @media screen and (width <= 680px){
+        .home-list-container{
+            flex-wrap: wrap;
+    
+            div{
+                margin-bottom: 10px;
+                margin-left: 0px;
+                width: 100%;
+    
+                p{
+                    font-size: 1rem;
+                }
+            }
+        }
+    }
+}

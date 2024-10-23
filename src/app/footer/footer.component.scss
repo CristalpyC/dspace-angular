@@ -1,73 +1,47 @@
 :host {
-  footer {
-    background-color: var(--ds-footer-bg);
-    text-align: center;
-    z-index: var(--ds-footer-z-index);
-    border-top: var(--ds-footer-border);
-    padding: var(--ds-footer-padding);
-
-    p {
-      margin: 0;
+  .footer-container{
+    background-color: #dadff0;
+    padding: 2rem;
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5rem;
+    color: #88888d;
+  
+    img{
+        height: 6rem;
+        margin-bottom: 0rem;
     }
-
-    div > img {
-      height: var(--ds-footer-logo-height);
-    }
-
-
-    .top-footer {
-      background-color: var(--ds-top-footer-bg);
-      padding: var(--ds-footer-padding);
-      margin: calc(var(--ds-footer-padding) * -1);
-    }
-
-    .bottom-footer {
-      .notify-enabled {
-        position: absolute;
-        bottom: 4px;
-        right: 0;
-
-        .coar-notify-support-route {
-          padding: 0 calc(var(--bs-spacer) / 2);
-          color: inherit;
+  
+    .footer-info-container{
+        .footer-title{
+            color: #000;
+            margin-bottom: 10px;
         }
-
-        .n-coar {
-          height: var(--ds-footer-n-coar-height);
-          margin-bottom: 8.5px;
+  
+        p{
+            margin-bottom: 0;
         }
+  
+        a{
+            text-decoration: none;
+            content: "secretariatecnica\@une.es";
+            color: #88888d;
 
-        margin-top: 20px;
-      }
-      ul {
-        li {
-          display: inline-flex;
-
-          a, .btn-link {
-            padding: 0 calc(var(--bs-spacer) / 2);
-            color: inherit;
-            font-size: .875em;
-
-            &:focus {
-              box-shadow: none;
-              text-decoration: underline;
-            }
-
-            &:focus-visible {
-              box-shadow: 0 0 0 0.2rem rgba(255, 255, 255, 0.5);
-            }
-          }
-
-          &:not(:last-child) {
-            &:after {
-              content: '';
-              border-right: 1px var(--bs-secondary) solid;
-            }
-
+          &hover{
+            border-bottom: 1px solid #88888d;
           }
         }
-      }
     }
+  }
+  
+  
+  @media screen and (width <= 767px){
+   .container{
+    justify-content: left;
+    align-items: left;
+   } 
   }
 }
 

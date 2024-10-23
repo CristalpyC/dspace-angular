@@ -1,8 +1,16 @@
+/* Estilos del input de texto */
 input[type="text"] {
   margin-top: calc(-0.5 * var(--bs-font-size-base));
   background-color: #fff !important;
-  border-color: var(--ds-header-icon-color);
+  border: none;
+  padding: 20px;
+  border-radius: none;
+  flex-grow: 1;
+  transition: width 0.3s ease;
+  outline: none;
+  box-shadow: none;
 
+  /* Para manejar el colapso */
   &.collapsed {
     opacity: 0;
   }
@@ -13,18 +21,58 @@ input[type="text"] {
   position: sticky;
   top: 0;
   border: 0 !important;
-
+  background-color: transparent;
+  padding: 10px;
   color: var(--ds-header-icon-color);
+
   &:hover, &:focus {
     color: var(--ds-header-icon-color-hover);
   }
 }
 
-@media screen and (max-width: map-get($grid-breakpoints, md)) {
-  .query:focus {
+/* Estilos responsivos */
+@media screen and (max-width: 768px) {
+  input[type="text"]:focus {
     max-width: 250px !important;
     width: 40vw !important;
   }
-
 }
 
+/* Estilo del botón de búsqueda */
+.search-btn {
+  background-color: transparent;
+  border: none;
+  padding: 10px;
+  color: var(--ds-header-icon-color);
+  cursor: pointer;
+}
+
+/* Estilo del select */
+.form-select {
+  border: none;
+  //border-left: 1px solid var(--ds-header-icon-color);
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 0 30px 30px 0;
+  cursor: pointer;
+  outline: none;
+  border-left: 2px solid #d5d5d7;
+}
+
+/* Contenedor general de la barra de búsqueda */
+.search-bar-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.search-form {
+  display: flex;
+  width: 100%;
+  max-width: 600px;
+  background-color: white;
+  border-radius: 30px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}

@@ -1,3 +1,30 @@
+<div class="search-bar-container">
+  <form [formGroup]="searchForm" (ngSubmit)="onSubmit(searchForm.value)" autocomplete="on" class="search-form d-flex align-items-center">
+    <input 
+      #searchInput
+      class="form-control search-input"
+      formControlName="query"
+      type="text"
+      [placeholder]="'Tu búsqueda'"
+      [attr.aria-label]="'Buscar'"
+    >
+    <button 
+      class="search-btn" 
+      type="submit"
+      aria-label="Buscar"
+    >
+      <em class="fas fa-search"></em>
+    </button>
+    <select class="form-select" aria-label="Seleccionar campo de búsqueda">
+      <option selected>Cualquier campo</option>
+      <option value="title">Título</option>
+      <option value="author">Autor</option>
+      <option value="subject">Tema</option>
+    </select>
+  </form>
+</div>
+
+<!--
 <div [title]="'nav.search' | translate" (dsClickOutside)="collapse()">
   <div class="d-inline-block position-relative">
     <form [formGroup]="searchForm" (ngSubmit)="onSubmit(searchForm.value)" autocomplete="on" class="d-flex">
@@ -13,3 +40,4 @@
     </form>
   </div>
 </div>
+-->

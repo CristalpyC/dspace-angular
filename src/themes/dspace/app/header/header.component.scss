@@ -1,12 +1,14 @@
 :host {
   #main-site-header {
     min-height: var(--ds-header-height);
-
     @include media-breakpoint-up(md) {
       height: var(--ds-header-height);
     }
 
     background-color: #dadff0;
+    //Agregando padding top y bottom
+    padding-bottom: 5rem;
+    padding-top: 1rem;
 
     &-container {
       min-height: var(--ds-header-height);
@@ -14,8 +16,7 @@
   }
 
   img#header-logo {
-    width: 8rem;
-    height: 8rem; //var(--ds-header-logo-height);
+    height: 5rem; //var(--ds-header-logo-height);
   }
 
   button#navbar-toggler {
