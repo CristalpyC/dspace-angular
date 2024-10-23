@@ -77,7 +77,7 @@
     },
     "@ngtools/webpack": {
       "@angular/compiler-cli": "^17.3.11",
-      "typescript": "~5.3.3"
+      "typescript": "~5.4.5"
     },
     "@nicky-lenaers/ngx-scroll-to": {
       "@angular/common": "^17.3.11",
@@ -108,7 +108,7 @@
     "@angular/platform-server": "^17.3.12",
     "@angular/router": "^17.3.12",
     "@angular/ssr": "^17.3.10",
-    "@babel/runtime": "7.25.7",
+    "@babel/runtime": "7.25.9",
     "@kolkov/ngx-gallery": "^2.0.1",
     "@ng-bootstrap/ng-bootstrap": "^11.0.0",
     "@ng-dynamic-forms/core": "^16.0.0",
@@ -151,7 +151,7 @@
     "markdown-it": "^13.0.1",
     "mirador": "^3.3.0",
     "mirador-dl-plugin": "^0.13.0",
-    "mirador-share-plugin": "^0.11.0",
+    "mirador-share-plugin": "^0.16.0",
     "morgan": "^1.10.0",
     "ng2-file-upload": "5.0.0",
     "ng2-nouislider": "^2.0.0",
@@ -163,7 +163,7 @@
     "reflect-metadata": "^0.2.2",
     "rxjs": "^7.8.0",
     "uuid": "^8.3.2",
-    "zone.js": "~0.14.4"
+    "zone.js": "~0.14.10"
   },
   "devDependencies": {
     "@angular-builders/custom-webpack": "~17.0.2",
@@ -241,8 +241,8 @@
     "sass-loader": "^12.6.0",
     "sass-resources-loader": "^2.2.5",
     "ts-node": "^8.10.2",
-    "typescript": "~5.3.3",
-    "webpack": "5.94.0",
+    "typescript": "~5.4.5",
+    "webpack": "5.95.0",
     "webpack-bundle-analyzer": "^4.8.0",
     "webpack-cli": "^5.1.4",
     "webpack-dev-server": "^4.15.1"
