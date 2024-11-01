@@ -1,5 +1,11 @@
-import { globalCSSImports, projectRoot, getFileHashes, calculateFileHash } from './helpers';
 import { EnvironmentPlugin } from 'webpack';
+
+import {
+  calculateFileHash,
+  getFileHashes,
+  globalCSSImports,
+  projectRoot,
+} from './helpers';
 
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const path = require('path');
@@ -11,7 +17,7 @@ export const copyWebpackOptions = {
     {
       from: path.join(__dirname, '..', 'node_modules', '@fortawesome', 'fontawesome-free', 'webfonts'),
       to: path.join('assets', 'fonts'),
-      force: undefined
+      force: undefined,
     },
     {
       from: path.join(__dirname, '..', 'src', 'assets', '**', '*.json5').replace(/\\/g, '/'),
@@ -26,7 +32,7 @@ export const copyWebpackOptions = {
       },
       transform(content) {
         return JSON.stringify(JSON5.parse(content.toString()));
-      }
+      },
     },
     {
       from: path.join(__dirname, '..', 'src', 'assets'),
@@ -50,17 +56,17 @@ export const copyWebpackOptions = {
     },
     {
       from: path.join(__dirname, '..', 'src', 'robots.txt.ejs'),
-      to: 'assets/robots.txt.ejs'
-    }
-  ]
+      to: 'assets/robots.txt.ejs',
+    },
+  ],
 };
 
 const SCSS_LOADERS = [
   {
     loader: 'postcss-loader',
     options: {
-      sourceMap: true
-    }
+      sourceMap: true,
+    },
   },
   {
     loader: 'sass-loader',
@@ -71,16 +77,16 @@ const SCSS_LOADERS = [
       // todo: remove after upgrading to Bootstrap 5
       implementation: sass,
       sassOptions: {
-        includePaths: [projectRoot('./')]
-      }
-    }
+        includePaths: [projectRoot('./')],
+      },
+    },
   },
 ];
 
 export const commonExports = {
   plugins: [
     new EnvironmentPlugin({
-      languageHashes: getFileHashes(path.join(__dirname, '..', 'src', 'assets', 'i18n'), /.*\.json5/g),
+      languageHashes: JSON.stringify(getFileHashes(path.join(__dirname, '..', 'src', 'assets', 'i18n'), /.*\.json5/g)),
     }),
     new CopyWebpackPlugin(copyWebpackOptions),
   ],
@@ -88,34 +94,34 @@ export const commonExports = {
     rules: [
       {
         test: /\.ts$/,
-        loader: '@ngtools/webpack'
+        loader: '@ngtools/webpack',
       },
       {
         test: /\.scss$/,
         exclude: [
           /node_modules/,
-          /(_exposed)?_variables.scss$|[\/|\\]src[\/|\\]themes[\/|\\].+?[\/|\\]styles[\/|\\].+\.scss$/
+          /(_exposed)?_variables.scss$|[\/|\\]src[\/|\\]themes[\/|\\].+?[\/|\\]styles[\/|\\].+\.scss$/,
         ],
         use: [
           ...SCSS_LOADERS,
           {
             loader: 'sass-resources-loader',
             options: {
-              resources: globalCSSImports()
+              resources: globalCSSImports(),
             },
-          }
-        ]
+          },
+        ],
       },
       {
         test: /(_exposed)?_variables.scss$|[\/|\\]src[\/|\\]themes[\/|\\].+?[\/|\\]styles[\/|\\].+\.scss$/,
         exclude: [/node_modules/],
         use: [
           ...SCSS_LOADERS,
-        ]
+        ],
       },
     ],
   },
   ignoreWarnings: [
     /src\/themes\/[^/]+\/.*theme.module.ts is part of the TypeScript compilation but it's unused/,
-  ]
+  ],
 };

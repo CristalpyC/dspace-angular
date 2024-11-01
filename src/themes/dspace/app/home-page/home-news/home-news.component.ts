@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 
 import { HomeNewsComponent as BaseComponent } from '../../../../../app/home-page/home-news/home-news.component';
 import { ThemedSearchNavbarComponent } from '../../../../../app/search-navbar/themed-search-navbar.component';
-import { StatisticsCardComponent } from '../../shared/statistics.component';
+import { StatisticsCardComponent } from '../../shared/statistics-card/statistics.component';
 
 @Component({
   selector: 'ds-themed-home-news',

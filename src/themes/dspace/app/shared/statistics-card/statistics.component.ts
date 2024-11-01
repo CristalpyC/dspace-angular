@@ -8,3 +8,4 @@ import { Component } from '@angular/core';
   styleUrls: ['./statistics.style.scss'],
 })
 export class StatisticsCardComponent { }
+
