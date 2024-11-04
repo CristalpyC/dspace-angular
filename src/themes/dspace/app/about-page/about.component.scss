@@ -1,7 +1,9 @@
 :host{
     .about-container{
         display: flex;
-        padding: 2rem;
+        justify-content: center;
+        align-items: center;
+        //padding-left: 2rem;
         margin-top: 2rem;
         gap: 2rem;
     
