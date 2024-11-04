@@ -16,7 +16,6 @@ import {
 } from '@angular/core';
 import { TranslateModule } from '@ngx-translate/core';
 import { Observable } from 'rxjs';
-import { InfoCardComponent } from 'src/themes/dspace/app/shared/info-cards/info-card.component';
 
 import {
   APP_CONFIG,
@@ -51,6 +50,7 @@ import {
 } from '../../shared/utils/follow-link-config.model';
 import { setPlaceHolderAttributes } from '../../shared/utils/object-list-utils';
 import { VarDirective } from '../../shared/utils/var.directive';
+import { InfoCardsComponent } from 'src/themes/dspace/app/shared/declaracion-informe/info-card.component';
 
 @Component({
   selector: 'ds-recent-item-list',
@@ -62,7 +62,7 @@ import { VarDirective } from '../../shared/utils/var.directive';
     fadeInOut,
   ],
   standalone: true,
-  imports: [VarDirective, NgIf, NgClass, NgFor, ListableObjectComponentLoaderComponent, ErrorComponent, ThemedLoadingComponent, AsyncPipe, TranslateModule, InfoCardComponent],
+  imports: [VarDirective, NgIf, NgClass, NgFor, ListableObjectComponentLoaderComponent, ErrorComponent, ThemedLoadingComponent, AsyncPipe, TranslateModule, InfoCardsComponent],
 })
 export class RecentItemListComponent implements OnInit, OnDestroy {
   itemRD$: Observable<RemoteData<PaginatedList<Item>>>;

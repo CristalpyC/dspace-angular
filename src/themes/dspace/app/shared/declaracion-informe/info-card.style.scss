@@ -1,14 +1,20 @@
 :host{
-    .info-cards-container{
+    .declaracion-informe-container{
         display: flex;
         justify-content: center;
-        gap: 2rem;
+        gap: 15px;
+        margin-top: 5rem;
     
-        .info-card{
+        .info-container{
             box-shadow: 0px 2px 5px #d5d5d7;
             padding: 1rem;
             border-radius: 11px;
             display: flex;
+            transition: ease-in-out 1s;
+
+            &:hover{
+                transform: scale(.9);
+            }
     
             div{
                 margin-top: 2rem;
@@ -26,4 +32,5 @@
     
         
     }
+    
 }
