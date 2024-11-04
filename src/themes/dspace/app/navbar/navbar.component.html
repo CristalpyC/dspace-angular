@@ -5,4 +5,10 @@
     <a class="ok" *ngFor="let section of sectionMap" [routerLink]="section.route">
       {{ section.label }}
     </a>
+    <!--
+     <ng-container *ngFor="let section of (sections | async)">
+      <ng-container
+        *ngComponentOutlet="(sectionMap$ | async).get(section.id)?.component; injector: (sectionMap$ | async).get(section.id)?.injector;"></ng-container>
+      </ng-container>
+      -->
 </div>
