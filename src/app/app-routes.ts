@@ -42,6 +42,8 @@ import { ThemedPageNotFoundComponent } from './pagenotfound/themed-pagenotfound.
 import { PROCESS_MODULE_PATH } from './process-page/process-page-routing.paths';
 import { provideSubmissionState } from './submission/provide-submission-state';
 import { SUGGESTION_MODULE_PATH } from './suggestions-page/suggestions-page-routing-paths';
+import { AboutComponent } from 'src/themes/dspace/app/about-page/about.component';
+import { ContactComponent } from 'src/themes/dspace/app/contact-page/contact.component';
 
 export const APP_ROUTES: Route[] = [
   { path: INTERNAL_SERVER_ERROR, component: ThemedPageInternalServerErrorComponent },
@@ -85,6 +87,10 @@ export const APP_ROUTES: Route[] = [
           .then((m) => m.ROUTES),
         canActivate: [endUserAgreementCurrentUserGuard],
       },
+      //Agregando rutas extra: About y contacto
+      { path: 'quienes-somos', component: AboutComponent },
+      { path: 'contacto', component: ContactComponent },
+      
       {
         path: REGISTER_PATH,
         loadChildren: () => import('./register-page/register-page-routes')
