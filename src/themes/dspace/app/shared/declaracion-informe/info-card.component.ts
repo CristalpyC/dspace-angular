@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'ds-info-card',
+  selector: 'ds-info-cards',
   standalone: true,
   imports: [],
-  templateUrl: './info-cards.component.html',
+  templateUrl: './info-card.component.html',
   styleUrls: ['./info-card.style.scss'],
 })
-export class InfoCardComponent { }
+export class InfoCardsComponent { }
+

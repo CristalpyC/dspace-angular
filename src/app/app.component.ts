@@ -61,7 +61,7 @@ import { ThemeService } from './shared/theme-support/theme.service';
   standalone: true,
   imports: [
     ThemedRootComponent,
-    AsyncPipe,
+    AsyncPipe
   ],
 })
 export class AppComponent implements OnInit, AfterViewInit {

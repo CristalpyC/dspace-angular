@@ -4545,6 +4545,7 @@
   // "menu.section.browse_global_by_author": "By Author",
   "menu.section.browse_global_by_author": "Por autor",
 
+
   // "menu.section.browse_global_by_dateissued": "By Issue Date",
   "menu.section.browse_global_by_dateissued": "Por fecha de publicación",
 
@@ -4875,8 +4876,10 @@
   // "nav.browse.header": "All of DSpace",
   "nav.browse.header": "Todo DSpace",
 
+
   // "nav.community-browse.header": "By Community",
   "nav.community-browse.header": "Por comunidad",
+
 
   // "nav.context-help-toggle": "Toggle context help",
   "nav.context-help-toggle": "Alternar ayuda contextual",
