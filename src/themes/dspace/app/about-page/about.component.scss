@@ -3,12 +3,11 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        //padding-left: 2rem;
+        padding-left: 12rem;
         margin-top: 2rem;
         gap: 2rem;
     
-        .about-info-container{
-        
+        .about-info-container{        
             h2{
                 font-weight: bold;
                 margin-bottom: 1rem;
@@ -19,10 +18,43 @@
             }
         }
 
-        .about-info-card{
+        .about-card{
+            box-shadow: 0px 8px 8px #d5d5d7;
+            border-radius: 11px;
+            width: 100%;
+            text-transform: uppercase;
+    
+            li{
+                list-style: none;
+                padding: 1.2rem;
+                border-bottom: 1px solid #d5d5d7;
+                margin: 0px 8px 0px 8px;
+    
+                &:hover{
+                    color: #8c212b;
+                }
+    
+                &:before{
+                    content: '→';
+                    color: #8c212b;
+                    margin-right: 5px;
+                }
+            }
+    
+            .special-li{
+                border-bottom: 0px;
+            }
+        }
+
+
+        
+       /* .about-info-card{
             width: 100%;
             border-radius: 11px;
-            margin-top: 2rem;
+            margin-left: 10px;
+            margin-top: -8rem;
+
+            //margin-top: 2rem;
 
             li{
                 &:hover{
@@ -35,7 +67,7 @@
                     margin-right: 5px;
                 }
             }
-        }
+        }*/
     }
     
    @media screen and (width <= 600px){
@@ -44,6 +76,7 @@
             justify-content: center;
             text-align: center;
             gap: 0rem;
+            text-wrap: nowrap;
         }
     }
 }

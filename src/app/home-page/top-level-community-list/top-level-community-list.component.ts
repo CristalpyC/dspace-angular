@@ -136,13 +136,13 @@ export class TopLevelCommunityListComponent implements OnInit, OnDestroy {
   public router = inject(Router);
 
   list = [
-    {name: 'Materias', text: 'Lorem ipsum dolor sit amet, consectetueradipiscing elit.', img: 'assets/images/ico_materias.svg', route:'/browse/subject'},
-    {name: 'Autoría', text: 'Lorem ipsum dolor sit amet, consectetueradipiscing elit.', img: 'assets/images/ico_autoria.svg', route:'/browse/author'},
-    {name: 'Colecciones', text: 'Lorem ipsum dolor sit amet, consectetueradipiscing elit.', img: 'assets/images/ico_colecciones.svg', route:'/community-list'},
-    {name: 'Editoriales', text: 'Lorem ipsum dolor sit amet, consectetueradipiscing elit.', img: 'assets/images/ico_editoriales.svg', route:'/community-list'}
+    { name: 'Materias', text: 'Lorem ipsum dolor sit amet, consectetueradipiscing elit.', img: 'assets/images/ico_materias.svg', route: '/browse/subject' },
+    { name: 'Autoría', text: 'Lorem ipsum dolor sit amet, consectetueradipiscing elit.', img: 'assets/images/ico_autoria.svg', route: '/browse/author' },
+    { name: 'Colecciones', text: 'Lorem ipsum dolor sit amet, consectetueradipiscing elit.', img: 'assets/images/ico_colecciones.svg', route: '/community-list' },
+    { name: 'Editoriales', text: 'Lorem ipsum dolor sit amet, consectetueradipiscing elit.', img: 'assets/images/ico_editoriales.svg', route: '/community-list' }
   ]
 
-  navigateTo(route: string): void{
+  navigateTo(route: string): void {
     this.router.navigate([route]);
   }
 
