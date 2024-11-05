@@ -87,9 +87,11 @@ export const APP_ROUTES: Route[] = [
           .then((m) => m.ROUTES),
         canActivate: [endUserAgreementCurrentUserGuard],
       },
-      //Agregando rutas extra: About y contacto
+
+      //Agregando rutas extra: About, contacto y ayuda
       { path: 'quienes-somos', component: AboutComponent },
       { path: 'contacto', component: ContactComponent },
+      { path: 'ayuda', component: HelpComponent },
       
       {
         path: REGISTER_PATH,
@@ -280,6 +282,7 @@ export const APP_ROUTING_SCROLL_CONF: InMemoryScrollingOptions = {
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CollectionUnemtxListComponent } from './collection-unemtx-list/collection-unemtx-list.component';
+import { HelpComponent } from 'src/themes/dspace/app/help-page/help-component.component';
 
 const routes: Routes = [
   { path: 'colecciones-une', component: CollectionUnemtxListComponent },

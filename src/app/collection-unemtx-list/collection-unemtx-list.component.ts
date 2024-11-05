@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CollectionsUnemtxService } from '../core/data/collections-unemtx.service';
 
 @Component({
-  selector: 'ds-collection-unemtx-list',
+  selector: 'app-collection-unemtx-list',
   standalone: true,
   imports: [],
   templateUrl: './collection-unemtx-list.component.html',
