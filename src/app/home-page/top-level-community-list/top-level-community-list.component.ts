@@ -5,6 +5,7 @@ import {
 import {
   ChangeDetectionStrategy,
   Component,
+  inject,
   Inject,
   OnDestroy,
   OnInit,
@@ -37,6 +38,7 @@ import { ThemedLoadingComponent } from '../../shared/loading/themed-loading.comp
 import { ObjectCollectionComponent } from '../../shared/object-collection/object-collection.component';
 import { PaginationComponentOptions } from '../../shared/pagination/pagination-component-options.model';
 import { VarDirective } from '../../shared/utils/var.directive';
+import { Router } from '@angular/router';
 
 /**
  * this component renders the Top-Level Community list
@@ -129,6 +131,19 @@ export class TopLevelCommunityListComponent implements OnInit, OnDestroy {
   ngOnDestroy() {
     this.unsubscribe();
     this.paginationService.clearPagination(this.config.id);
+  }
+
+  public router = inject(Router);
+
+  list = [
+    {name: 'Materias', text: 'Lorem ipsum dolor sit amet, consectetueradipiscing elit.', img: 'assets/images/ico_materias.svg', route:'/browse/subject'},
+    {name: 'Autoría', text: 'Lorem ipsum dolor sit amet, consectetueradipiscing elit.', img: 'assets/images/ico_autoria.svg', route:'/browse/author'},
+    {name: 'Colecciones', text: 'Lorem ipsum dolor sit amet, consectetueradipiscing elit.', img: 'assets/images/ico_colecciones.svg', route:'/community-list'},
+    {name: 'Editoriales', text: 'Lorem ipsum dolor sit amet, consectetueradipiscing elit.', img: 'assets/images/ico_editoriales.svg', route:'/community-list'}
+  ]
+
+  navigateTo(route: string): void{
+    this.router.navigate([route]);
   }
 
 }
