@@ -11,7 +11,7 @@ import { CollectionsUnemtxService } from '../core/data/collections-unemtx.servic
 export class CollectionUnemtxListComponent implements OnInit {
   collections: any[] = [];
 
-  constructor(private collectionsService: CollectionsUnemtxService) {}
+  constructor(private collectionsService: CollectionsUnemtxService) { }
 
   ngOnInit(): void {
     this.collectionsService.getCollections().subscribe(
