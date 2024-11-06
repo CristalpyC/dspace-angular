@@ -92,6 +92,7 @@ export const APP_ROUTES: Route[] = [
       { path: 'quienes-somos', component: AboutComponent },
       { path: 'contacto', component: ContactComponent },
       { path: 'ayuda', component: HelpComponent },
+      { path: 'colecciones-une', component: CollectionUnemtxListComponent},
       
       {
         path: REGISTER_PATH,

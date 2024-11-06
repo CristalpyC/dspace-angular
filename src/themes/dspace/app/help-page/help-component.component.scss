@@ -1,0 +1,17 @@
+:host{
+    .help-container{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+
+        p{
+            text-align: center;
+            font-size: 2rem;
+        }
+
+        img{
+            width: 5rem;
+        }
+    }
+}
