@@ -1,18 +1,17 @@
 <!--Vista de autores-->
-<section class="mt-5">
 <ng-container *ngVar="(objects$ | async) as objects">
-  <h1 *ngIf="displayTitle">{{browse.title | translate}}</h1>
-  
-  <!--Barra de búsqueda-->
+  <h1 *ngIf="displayTitle">{{title | translate}}</h1>
+
+    <!--Barra de búsqueda-->
   <ds-starts-with-loader [paginationId]="paginationConfig?.id" [startsWithOptions]="startsWithOptions" [type]="type">
   </ds-starts-with-loader>
 
   <div *ngIf="objects?.hasSucceeded && !objects?.isLoading && objects?.payload?.page.length > 0" @fadeIn>
-    <div *ngIf="shouldDisplayResetButton$ |async" class="mb-2 reset">
-      <ds-results-back-button [back]="back" [buttonLabel]="buttonLabel"></ds-results-back-button>
-    </div>
+      <div *ngIf="shouldDisplayResetButton$ |async" class="mb-2 reset">
+        <ds-results-back-button [back]="back" [buttonLabel]="buttonLabel"></ds-results-back-button>
+      </div>
 
-    <!--Listado de autores-->
+      <!--Listado de autores-->
     <ds-viewable-collection
       [config]="paginationConfig"
       [sortConfig]="sortConfig"
@@ -33,4 +32,3 @@
     </div>
   </div>
 </ng-container>
-</section>
