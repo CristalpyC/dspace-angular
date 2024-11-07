@@ -2,7 +2,7 @@
     .help-container{
         display: flex;
         justify-content: center;
-        align-items: center;
+        // align-items: center;
         flex-direction: column;
 
         p{
@@ -14,4 +14,21 @@
             width: 5rem;
         }
     }
+    .hover-card {
+        transition: transform 0.3s ease, box-shadow 0.3s ease; 
+        cursor: pointer; 
+      }
+      
+      .hover-card:hover {
+        transform: translateY(-5px); 
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); 
+      }
+      
+      .hover-card .card-body {
+        transition: background-color 0.3s ease;
+      }
+      
+      .hover-card:hover .card-body {
+        background-color: #f7f7f7; 
+      }
 }

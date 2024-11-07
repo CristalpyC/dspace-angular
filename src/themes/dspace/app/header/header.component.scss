@@ -4,6 +4,10 @@
     @include media-breakpoint-up(md) {
       height: var(--ds-header-height);
     }
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
 
     background-color: #dadff0;
 

@@ -35,6 +35,7 @@ import { Observable, of } from 'rxjs';
 })
 export class NavbarComponent extends BaseComponent {
   sectionMap = [
+    { label: 'INICIO', route: '/home' },
     { label: 'QUIENES SOMOS', route: '/quienes-somos' },
     { label: 'EDITORIALES UNE', route: '/community-list' },
     { label: 'CONTACTO', route: '/contacto' },
