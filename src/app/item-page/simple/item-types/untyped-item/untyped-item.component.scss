@@ -1,2 +1,48 @@
 @import '../../../../../styles/variables.scss';
 
+:host{
+    .item-link-btn{
+        Border-radius: 3px;
+        font-weight: bold;
+        background-color: #8c212b;
+        border: none;
+        box-shadow: 0px 5px 8px gray;
+        color: white;
+
+        &:hover{
+            background-color: #9c343f;
+        }
+    }
+
+    .item-img-info{
+        background-color: #dadff0;
+        width: 100%;
+        padding: 2rem;
+
+        .item-img-info-container{
+            margin-top: 10rem;
+        }
+    }
+
+    .autor-info-container{
+        display: flex;
+        gap: 2px;
+
+        .id-btn{
+            background-color: rgb(167, 226, 78);
+            color: white;
+            border-radius: 8rem;
+            padding: 2px;
+            text-transform: uppercase;
+            border: none;
+        }
+    }
+
+ 
+        button{
+            margin-right: 8px;
+            border: solid 1px gray
+        }
+    
+
+}

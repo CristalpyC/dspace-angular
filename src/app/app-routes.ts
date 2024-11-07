@@ -4,6 +4,25 @@ import {
   RouterConfigOptions,
 } from '@angular/router';
 
+//AQUI CODIGO CUSTOMIZADO - MUESTRA LA LISTA DE COLECCIONES DE LA UNE
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
+import { CollectionUnemtxListComponent } from './collection-unemtx-list/collection-unemtx-list.component';
+import { HelpComponent } from 'src/themes/dspace/app/help-page/help-component.component';
+
+const routes: Routes = [
+  { path: 'colecciones-une', component: CollectionUnemtxListComponent },
+  // otras rutas
+];
+
+@NgModule({
+  imports: [RouterModule.forRoot(routes)],
+  exports: [RouterModule]
+})
+export class AppRoutingModule { }
+
+//FINALIZA AQUÍ
+
 import { NOTIFICATIONS_MODULE_PATH } from './admin/admin-routing-paths';
 import {
   ACCESS_CONTROL_MODULE_PATH,
@@ -92,6 +111,7 @@ export const APP_ROUTES: Route[] = [
       { path: 'quienes-somos', component: AboutComponent },
       { path: 'contacto', component: ContactComponent },
       { path: 'ayuda', component: HelpComponent },
+      //GM
       { path: 'colecciones-une', component: CollectionUnemtxListComponent},
       
       {
@@ -279,19 +299,5 @@ export const APP_ROUTING_SCROLL_CONF: InMemoryScrollingOptions = {
 };
 
 
-//AQUI CODIGO CUSTOMIZADO - MUESTRA LA LISTA DE COLECCIONES DE LA UNE
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
-import { CollectionUnemtxListComponent } from './collection-unemtx-list/collection-unemtx-list.component';
-import { HelpComponent } from 'src/themes/dspace/app/help-page/help-component.component';
 
-const routes: Routes = [
-  { path: 'colecciones-une', component: CollectionUnemtxListComponent },
-  // otras rutas
-];
 
-@NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
-})
-export class AppRoutingModule { }

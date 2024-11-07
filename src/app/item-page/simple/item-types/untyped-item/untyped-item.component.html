@@ -1,4 +1,5 @@
 <ds-results-back-button *ngIf="showBackButton$ | async" [back]="back"></ds-results-back-button>
+
 <div class="row" *ngIf="iiifEnabled">
   <div class="col-12">
     <ds-mirador-viewer id="iiif-viewer"
@@ -9,46 +10,34 @@
   </div>
 </div>
 
-<div class="d-flex flex-row">
-  <ds-item-page-title-field [item]="object" class="mr-auto">
-  </ds-item-page-title-field>
-  <ds-dso-edit-menu></ds-dso-edit-menu>
-</div>
-<div class="row">
-  <div class="col-xs-12 col-md-4">
-    <ng-container *ngIf="!(mediaViewer.image || mediaViewer.video)">
-      <ds-metadata-field-wrapper [hideIfNoTextContent]="false">
-        <ds-thumbnail [thumbnail]="object?.thumbnail | async"></ds-thumbnail>
-      </ds-metadata-field-wrapper>
-    </ng-container>
-    <div *ngIf="mediaViewer.image || mediaViewer.video" class="mb-2">
-      <ds-media-viewer [item]="object"></ds-media-viewer>
-    </div>
-    <ds-item-page-file-section [item]="object"></ds-item-page-file-section>
-    <ds-item-page-date-field [item]="object"></ds-item-page-date-field>
-    <ds-metadata-representation-list class="ds-item-page-mixed-author-field"
-      [parentItem]="object"
-      [itemType]="'Person'"
-      [metadataFields]="['dc.contributor.author', 'dc.creator']"
-      [label]="'relationships.isAuthorOf' | translate">
-    </ds-metadata-representation-list>
-    <ds-generic-item-page-field [item]="object"
-      [fields]="['journal.title']"
-      [label]="'item.page.journal-title'">
-    </ds-generic-item-page-field>
-    <ds-generic-item-page-field [item]="object"
-      [fields]="['journal.identifier.issn']"
-      [label]="'item.page.journal-issn'">
-    </ds-generic-item-page-field>
-    <ds-generic-item-page-field [item]="object"
-      [fields]="['journalvolume.identifier.name']"
-      [label]="'item.page.volume-title'">
-    </ds-generic-item-page-field>
-    <ds-generic-item-page-field [item]="object"
-      [fields]="['dc.publisher']"
-      [label]="'item.page.publisher'">
-    </ds-generic-item-page-field>
+<div class="mb-3 item-title">
+  <div class="d-flex flex-row">
+    <ds-item-page-title-field [item]="object" class="mr-auto">
+    </ds-item-page-title-field>
+    <ds-dso-edit-menu></ds-dso-edit-menu>
   </div>
+
+  <!--Autor-->
+  <div class="autor-info-container">
+    <h5>
+      Apellido del autor, nombre
+      <button class="id-btn">
+        id
+      </button>
+    </h5>
+  </div>
+
+  <!--Botones: Cómo citar la obra/recurso ; Exportar ; Ver estadísticas-->
+  <div class="action-btns">
+    @for (let btn of buttonsMap; track btn.titulo){
+      <button>{{ btn.titulo }}</button>
+    }
+  </div>
+  
+</div>
+
+<div class="row fw-bold">
+  <!--Descripción-->
   <div class="col-xs-12 col-md-6">
     <ds-item-page-abstract-field [item]="object"></ds-item-page-abstract-field>
     <ds-generic-item-page-field [item]="object"
@@ -89,9 +78,50 @@
     <ds-item-page-cc-license-field [item]="object" [variant]="'full'">
     </ds-item-page-cc-license-field>
     <div>
-      <a class="btn btn-outline-primary" [routerLink]="[itemPageRoute + '/full']" role="button">
-        <i class="fas fa-info-circle"></i> {{"item.page.link.full" | translate}}
+      <a class="btn btn-outline-primary item-link-btn" [routerLink]="[itemPageRoute + '/full']" role="button">
+        {{"item.page.link.full" | translate}} →
       </a>
+    </div>
+  </div>
+
+  <!--Imagen y sus elementos-->
+  <div class="col-xs-12 col-md-4 item-img-info">
+    <ng-container *ngIf="!(mediaViewer.image || mediaViewer.video)">
+    <!--Imagen-->
+    <ds-metadata-field-wrapper [hideIfNoTextContent]="false">
+          <ds-thumbnail [thumbnail]="object?.thumbnail | async"></ds-thumbnail>
+    </ds-metadata-field-wrapper>
+    </ng-container>
+
+    <div *ngIf="mediaViewer.image || mediaViewer.video" class="mb-2">
+      <ds-media-viewer [item]="object"></ds-media-viewer>
+    </div>
+    
+    <div class="item-img-info-container">
+      <ds-item-page-file-section [item]="object"></ds-item-page-file-section>
+    <ds-item-page-date-field [item]="object"></ds-item-page-date-field>
+    <ds-metadata-representation-list class="ds-item-page-mixed-author-field"
+      [parentItem]="object"
+      [itemType]="'Person'"
+      [metadataFields]="['dc.contributor.author', 'dc.creator']"
+      [label]="'relationships.isAuthorOf' | translate">
+    </ds-metadata-representation-list>
+    <ds-generic-item-page-field [item]="object"
+      [fields]="['journal.title']"
+      [label]="'item.page.journal-title'">
+    </ds-generic-item-page-field>
+    <ds-generic-item-page-field [item]="object"
+      [fields]="['journal.identifier.issn']"
+      [label]="'item.page.journal-issn'">
+    </ds-generic-item-page-field>
+    <ds-generic-item-page-field [item]="object"
+      [fields]="['journalvolume.identifier.name']"
+      [label]="'item.page.volume-title'">
+    </ds-generic-item-page-field>
+    <ds-generic-item-page-field [item]="object"
+      [fields]="['dc.publisher']"
+      [label]="'item.page.publisher'">
+    </ds-generic-item-page-field>
     </div>
   </div>
 </div>

@@ -7,7 +7,7 @@ import { environment } from 'src/environments/environment';
   providedIn: 'root'
 })
 export class CollectionsUnemtxService {
-  private apiUrl = `$ https://dspace-laboratorio.glaux.es/server/api/core/collections`;
+  private apiUrl = `${environment.rest.baseUrl}/core/collections`;
 
   constructor(private http: HttpClient) {}
 
@@ -15,4 +15,5 @@ export class CollectionsUnemtxService {
     return this.http.get(this.apiUrl);
   }
 }
+
 

@@ -62,4 +62,11 @@ import { ItemComponent } from '../shared/item.component';
     ItemPageCcLicenseFieldComponent,
   ],
 })
-export class UntypedItemComponent extends ItemComponent {}
+export class UntypedItemComponent extends ItemComponent {
+  buttonsMap = [
+    {titulo: 'Cómo citar la obra/recurso'}, 
+    {titulo: 'Exportar'}, 
+    {titulo: 'Ver estadísticas'}
+  ];
+
+}
