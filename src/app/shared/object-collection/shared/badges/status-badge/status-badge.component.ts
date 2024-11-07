@@ -12,6 +12,7 @@ import { hasValue } from '../../../../empty.util';
 @Component({
   selector: 'ds-base-status-badge',
   templateUrl: './status-badge.component.html',
+  styleUrl: './status-badge.style.scss',
   standalone: true,
   imports: [NgIf, TranslateModule],
 })
