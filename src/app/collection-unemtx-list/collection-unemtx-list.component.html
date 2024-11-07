@@ -6,7 +6,8 @@
       <p>{{ collection.description }}</p>
     </li>-->
     @for (collection of collections; track collection.id){
-    <li>{{ collection.name }}</li>
+      <h3>{{ collection.name }}</h3>
+      <p>{{ collection.description }}</p>
     } @empty {
     <p>No hay datos disponibles.</p>
     }

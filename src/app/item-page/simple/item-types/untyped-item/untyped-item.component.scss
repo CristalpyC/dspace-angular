@@ -38,11 +38,23 @@
         }
     }
 
- 
+    .action-btns{
         button{
             margin-right: 8px;
-            border: solid 1px gray
+            border: solid 1px gray;
+
+            &:hover{
+                background-color: rgb(183, 183, 183);
+            }
         }
-    
+    }
+
+    .tables-container{
+        margin-top: 2rem;
+        display: flex;
+        gap: 2rem;
+        //justify-content: space-between;
+        
+    }
 
 }
