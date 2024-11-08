@@ -3,9 +3,9 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        //padding-left: 2rem;
+        padding-left: 12rem;
         margin-top: 2rem;
-        gap: 2rem;
+        gap: 1.3rem;
     
         .about-info-container{
         
@@ -22,7 +22,7 @@
         .about-info-card{
             width: 100%;
             border-radius: 11px;
-            margin-top: 2rem;
+            //margin-top: 2rem;
 
             li{
                 &:hover{
