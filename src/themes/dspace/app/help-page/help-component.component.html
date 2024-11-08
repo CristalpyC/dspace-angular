@@ -7,10 +7,9 @@
     </div>
   
     <div class="row">
-      <!-- Primer bucle: las primeras 3 cartas -->
       <ng-container *ngFor="let card of helpCards; let i = index">
         <div *ngIf="i < 3" class="col-md-4 col-sm-12 mb-4">
-          <a [routerLink]="card.link || '#'" class="card-link"> <!-- Usamos 'card.link' o un valor por defecto -->
+          <a [routerLink]="card.link || '#'" class="card-link"> 
             <div class="card h-100 shadow-sm hover-card">
               <div class="card-body">
                 <div class="mb-3 text-center">
@@ -26,10 +25,10 @@
     </div>
   
     <div class="row">
-      <!-- Segundo bucle: las siguientes 2 cartas -->
+   
       <ng-container *ngFor="let card of helpCards; let i = index">
         <div *ngIf="i >= 3" class="col-md-6 col-sm-12 mb-4">
-          <a [routerLink]="card.link || '#'" class="card-link"> <!-- Usamos 'card.link' o un valor por defecto -->
+          <a [routerLink]="card.link || '#'" class="card-link"> 
             <div class="card h-100 shadow-sm hover-card">
               <div class="card-body">
                 <div class="mb-3 text-center">
