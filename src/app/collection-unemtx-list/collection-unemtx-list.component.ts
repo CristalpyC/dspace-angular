@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CollectionsUnemtxService } from '../core/data/collections-unemtx.service';
 
 @Component({
-  selector: 'ds-collection-unemtx-list',
+  selector: 'app-collection-unemtx-list',
   standalone: true,
   imports: [],
   templateUrl: './collection-unemtx-list.component.html',
@@ -11,7 +11,7 @@ import { CollectionsUnemtxService } from '../core/data/collections-unemtx.servic
 export class CollectionUnemtxListComponent implements OnInit {
   collections: any[] = [];
 
-  constructor(private collectionsService: CollectionsUnemtxService) {}
+  constructor(private collectionsService: CollectionsUnemtxService) { }
 
   ngOnInit(): void {
     this.collectionsService.getCollections().subscribe(

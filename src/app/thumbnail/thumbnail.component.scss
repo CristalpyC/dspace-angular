@@ -4,6 +4,7 @@
 
 img {
   max-width: 100%;
+  
 }
 
 .outer {  // .outer/.inner generated ~ https://ratiobuddy.com/
@@ -22,7 +23,8 @@ img {
     left: 0;
 
     > .thumbnail-placeholder {
-      background: var(--ds-thumbnail-placeholder-background);
+      background: #c5c5c5;
+      //padding: 100%;
       border: var(--ds-thumbnail-placeholder-border);
       color: var(--ds-thumbnail-placeholder-color);
       font-weight: bold;

@@ -1,5 +1,11 @@
 :host {
   display:block;
+
+  .object-list-container{
+    box-shadow: 0px 2px 2px gray;
+    padding: 1rem;
+    border-radius: 11px;
+  }
 }
 
 

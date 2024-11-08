@@ -2,11 +2,15 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'ds-contact',
-  standalone: true,
-  imports: [],
   templateUrl: './contact.component.html',
-  styleUrl: './contact.component.scss'
+  styleUrls: ['./contact.component.scss'] 
 })
 export class ContactComponent {
+  name: string = '';
+  email: string = '';
+  message: string = '';
 
+  onSubmit() {
+    console.log('Formulario enviado:', { name: this.name, email: this.email, message: this.message });
+  }
 }

@@ -1,7 +1,17 @@
 <!--Listado-->
 <h4 class="h4 mt-5 mb-5 text-uppercase">Listar por</h4>
-  <section class='home-list-container'>
-    <div (click)="https://rapidosoporte.com/browse/subject">
+<section class='home-list-container'>
+  @for (lists of list; track lists.name){
+  <div (click)="navigateTo(lists.route)">
+    <img [src]="lists.img" alt="materias" />
+    <h5>{{ lists.name }}</h5>
+    <p>
+      {{ lists.text }}
+    </p>
+  </div>
+  }
+
+  <!--<div>
       <img src="assets/images/ico_materias.svg" alt="materias" />  
       <h5>Materias</h5>
       <p>
@@ -39,11 +49,11 @@
       amet, consectetuer
       adipiscing elit.
       </p>
-    </div>
-  </section>
+    </div>-->
+</section>
 
 
-  <!--
+<!--
 <ng-container *ngVar="(communitiesRD$ | async) as communitiesRD">
   <div *ngIf="communitiesRD?.hasSucceeded ">
     <h2>
