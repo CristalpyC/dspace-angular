@@ -8,12 +8,12 @@
         <div class="contact-section">
           <h2>SECRETARÍA TÉCNICA</h2>
           <div class="contact-item">
-            <h3>Joaquín Corbacho</h3>
+            <p>Joaquín Corbacho</p>
             <p>Teléfono: 913 600 698</p>
             <a href="mailto:secretariatecnica@une.es">secretariatecnica&#64;une.es</a>
           </div>
           <div class="contact-item">
-            <h3>Marta García Palomo</h3>
+            <p>Marta García Palomo</p>
             <p>Teléfono: 913 600 698</p>
             <a href="mailto:secretariatecnica3@une.es">secretariatecnica3&#64;une.es</a>
           </div>
@@ -22,12 +22,12 @@
         <div class="contact-section">
           <h2>COMUNICACIÓN Y PRENSA</h2>
           <div class="contact-item">
-            <h3>Rosa de Bustos</h3>
+            <p>Rosa de Bustos</p>
             <p>Teléfono: 654 991 862</p>
             <a href="mailto:prensa@une.es">prensa&#64;une.es</a>
           </div>
           <div class="contact-item">
-            <h3>Julia Sánchez-Arévalo Gallardo</h3>
+            <p>Julia Sánchez-Arévalo Gallardo</p>
             <p>Teléfono: 913 600 698</p>
             <a href="mailto:prensa2@une.es">prensa2&#64;une.es</a>
           </div>
@@ -36,7 +36,7 @@
         <div class="contact-section">
           <h2>UNEBOOK</h2>
           <div class="contact-item">
-            <h3>Alejandro Fernández Diego</h3>
+            <p>Alejandro Fernández Diego</p>
             <p>Teléfono: 915 996 691</p>
             <a href="mailto:alejandrof@unebook.es">alejandrof&#64;unebook.es</a>
           </div>
@@ -46,8 +46,9 @@
     
     <!--Formulario de contacto-->
     <div class="form-container ml-5">
-      <h3 class="mb-2">Envíanos tu consulta a través de este formulario.</h3>
       <form (ngSubmit)="onSubmit()" class="form-contact-container">
+        <h3 class="mb-3">Envíanos tu consulta a través de este formulario.</h3>
+
         <div class="form-group">
           <label for="name">TU NOMBRE</label>
           <input id="name" name="name" type="text" class="form-control" required>

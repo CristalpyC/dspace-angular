@@ -38,6 +38,7 @@ export class NavbarComponent extends BaseComponent {
     { label: 'INICIO', route: '/home' },
     { label: 'QUIENES SOMOS', route: '/quienes-somos' },
     { label: 'EDITORIALES UNE', route: '/community-list' },
+    { label: 'ESTADISTICAS', route: '/statistics' },
     { label: 'CONTACTO', route: '/contacto' },
     { label: 'AYUDA', route: '/ayuda' }
   ];

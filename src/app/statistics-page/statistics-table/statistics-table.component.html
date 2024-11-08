@@ -24,7 +24,7 @@
         {{ getLabel(point) | async }}
       </th>
       <td *ngFor="let header of headers"
-          class="{{point.id}}-{{header}}-data">
+          class="{{point.id}}-{{header}}-data values">
         {{ point.values[header] }}
       </td>
     </tr>

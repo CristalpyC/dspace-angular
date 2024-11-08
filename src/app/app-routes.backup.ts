@@ -93,6 +93,7 @@ export const APP_ROUTES: Route[] = [
 
       { path: 'buscador', component: FinderComponents },
       { path: 'tecnologia', component: TecnologyComponent },
+      {path:'politica-servicios', component:PoliciesAndServicesComponent},
       
       {
         path: REGISTER_PATH,
@@ -285,6 +286,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { CollectionUnemtxListComponent } from './collection-unemtx-list/collection-unemtx-list.component';
 import { FinderComponents } from 'src/themes/dspace/app/finder-page/finder.component';
 import { TecnologyComponent } from 'src/themes/dspace/app/tecnology-page/tecnology/tecnology.component';
+import { PoliciesAndServicesComponent } from 'src/themes/dspace/app/policies-page/policies-and-services/policies-and-services.component';
 
 
 const routes: Routes = [
