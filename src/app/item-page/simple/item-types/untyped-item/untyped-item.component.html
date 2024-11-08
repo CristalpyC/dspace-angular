@@ -17,11 +17,17 @@
 
     <!--Autor-->
     <div class="autor-info-container">
-      <h5>
-        Apellido del autor, nombre
-        <button class="id-btn">
+      <h5 class="author-container">
+        <ds-metadata-representation-list
+          class="ds-item-page-mixed-author-field authors-list"
+          [parentItem]="object"
+          [itemType]="'Person'"
+          [metadataFields]="['dc.contributor.author', 'dc.creator']">
+        </ds-metadata-representation-list>
+
+       <!-- <button class="id-btn">
           id
-        </button>
+        </button>-->
       </h5>
     </div>
 

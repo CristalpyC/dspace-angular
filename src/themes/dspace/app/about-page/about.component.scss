@@ -18,35 +18,43 @@
             }
         }
 
-        .about-card{
+    
+        .about-card {
             box-shadow: 0px 8px 8px #d5d5d7;
             border-radius: 11px;
             width: 100%;
             text-transform: uppercase;
-    
-            li{
+
+            li {
                 list-style: none;
                 padding: 1.2rem;
                 border-bottom: 1px solid #d5d5d7;
                 margin: 0px 8px 0px 8px;
-    
-                &:hover{
+
+                &:hover {
                     color: #8c212b;
                 }
-    
-                &:before{
+
+                &:before {
                     content: '→';
                     color: #8c212b;
                     margin-right: 5px;
                 }
             }
-    
-            .special-li{
+
+            .special-li {
                 border-bottom: 0px;
             }
         }
+        .fixed-sidebar {
+            position: sticky; 
+            top: 140px;       
+            width: 100%;     
+            background-color: #fff; 
+            padding: 15px;         
+            z-index: 1000; 
 
-
+        }
         
        /* .about-info-card{
             width: 100%;

@@ -1,9 +1,17 @@
 <ds-metadata-field-wrapper [label]="label">
   <ng-container *ngFor="let objectPage of objects; let i = index">
     <ng-container *ngVar="(objectPage | async) as representations">
-      <ds-metadata-representation-loader *ngFor="let rep of representations"
-                                         [mdRepresentation]="rep">
-      </ds-metadata-representation-loader>
+      <div style="display: flex; flex-direction: column;">
+        <div *ngFor="let rep of representations" style="display: flex; align-items: center; margin-bottom: 8px;">
+          <!-- Representación del autor -->
+          <ds-metadata-representation-loader [mdRepresentation]="rep" style="margin-right: 8px;">
+          </ds-metadata-representation-loader>
+          <!-- Botón 'id' al lado de cada autor -->
+          <button class="id-btn" style="display: inline-block;">
+            id
+          </button>
+        </div>
+      </div>
       <ds-loading *ngIf="(i + 1) === objects.length && (i > 0) && (!representations || representations?.length === 0)" message="{{'loading.default' | translate}}"></ds-loading>
       <div class="d-inline-block w-100 mt-2" *ngIf="(i + 1) === objects.length && representations?.length > 0">
         <div *ngIf="(objects.length * incrementBy) < total" class="float-left">
@@ -11,7 +19,7 @@
             translate:{ amount: (total - (objects.length * incrementBy) < incrementBy) ? total - (objects.length * incrementBy) : incrementBy } }}</button>
         </div>
         <div *ngIf="objects.length > 1" class="float-right">
-          <button class="btn btn-link btn-link-inline" (click)="decrease()">{{'item.page.related-items.view-less' |
+          <button class="btn btn-link btn-link-inline btn-primary" (click)="decrease()">{{'item.page.related-items.view-less' |
             translate:{ amount: representations?.length } }}</button>
         </div>
       </div>

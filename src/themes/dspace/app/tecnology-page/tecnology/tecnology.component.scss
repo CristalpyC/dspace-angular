@@ -51,6 +51,20 @@
             color: #8c212b
         }
 
+        .fixed-sidebar {
+            position: sticky; 
+            top: 140px;       
+            width: 100%;     
+            background-color: #fff; 
+            padding: 15px;         
+            z-index: 1000; 
+
+        }
+
+
+
+
+
         /* .about-info-card{
             width: 100%;
             border-radius: 11px;

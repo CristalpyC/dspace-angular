@@ -19,9 +19,12 @@
     </tr>
 
     <tr *ngFor="let point of report.points"
-        class="{{point.id}}-data">
+        class="{{point.id}}-data"
+      >
       <th scope="row" data-test="statistics-label">
-        {{ getLabel(point) | async }}
+        <a [routerLink]="['/items', point.id]">
+          {{ getLabel(point) | async }}
+        </a>
       </th>
       <td *ngFor="let header of headers"
           class="{{point.id}}-{{header}}-data values">

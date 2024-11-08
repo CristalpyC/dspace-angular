@@ -5,6 +5,7 @@ import {
 } from '@angular/common';
 import {
   Component,
+  Inject,
   Input,
   OnInit,
 } from '@angular/core';
@@ -29,6 +30,7 @@ import {
   UsageReport,
 } from '../../core/statistics/models/usage-report.model';
 import { isEmpty } from '../../shared/empty.util';
+import { Router, RouterLink } from '@angular/router';
 
 /**
  * Component representing a statistics table for a given usage report.
@@ -38,9 +40,16 @@ import { isEmpty } from '../../shared/empty.util';
   templateUrl: './statistics-table.component.html',
   styleUrls: ['./statistics-table.component.scss'],
   standalone: true,
-  imports: [NgIf, NgFor, AsyncPipe, TranslateModule],
+  imports: [NgIf, NgFor, AsyncPipe, TranslateModule, RouterLink],
 })
 export class StatisticsTableComponent implements OnInit {
+  private router = Inject(Router)
+
+  // Función que redirige a la página de detalle
+  goToDetail(id: string) {
+    console.log('Navigating to item with id:', id);
+    this.router.navigate(['/items', id]);
+  }
 
   /**
    * The usage report to display a statistics table for

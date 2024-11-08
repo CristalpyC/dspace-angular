@@ -8,11 +8,21 @@
         p{
             text-align: center;
             font-size: 2rem;
+            font-weight: bold;
         }
 
         img{
             width: 5rem;
         }
+    }
+    a {
+      text-decoration: none; 
+      outline: none;         
+    }
+    
+    a:hover {
+      text-decoration: none; 
+      outline: none;         
     }
     .hover-card {
         transition: transform 0.3s ease, box-shadow 0.3s ease; 

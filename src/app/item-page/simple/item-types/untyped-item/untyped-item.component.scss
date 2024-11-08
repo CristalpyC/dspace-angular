@@ -28,14 +28,22 @@
         display: flex;
         gap: 2px;
 
-        .id-btn{
+        .ds-item-page-mixed-author-field {
+            display: flex;
+            flex-direction: column;
+            margin-right: 8px; 
+          }
+
+        /*.id-btn{
             background-color: rgb(167, 226, 78);
             color: white;
             border-radius: 8rem;
             padding: 2px;
             text-transform: uppercase;
             border: none;
-        }
+            margin-bottom: 1rem;
+            align-self: center;
+        }*/
     }
 
     .action-btns{

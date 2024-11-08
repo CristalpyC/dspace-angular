@@ -45,6 +45,15 @@
                 border-bottom: 0px;
             }
         }
+        .fixed-sidebar {
+            position: sticky; 
+            top: 140px;       
+            width: 100%;     
+            background-color: #fff; 
+            padding: 15px;         
+            z-index: 1000; 
+
+        }
 
 
         
