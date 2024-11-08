@@ -1,27 +1,66 @@
-<!--
+
 <div class="container">
     <div class="contact-info">
       <h2>Contacto</h2>
+
+      <!--Información de contacto-->
+      <div class="contact-list">
+        <div class="contact-section">
+          <h2>SECRETARÍA TÉCNICA</h2>
+          <div class="contact-item">
+            <h3>Joaquín Corbacho</h3>
+            <p>Teléfono: 913 600 698</p>
+            <a href="mailto:secretariatecnica@une.es">secretariatecnica&#64;une.es</a>
+          </div>
+          <div class="contact-item">
+            <h3>Marta García Palomo</h3>
+            <p>Teléfono: 913 600 698</p>
+            <a href="mailto:secretariatecnica3@une.es">secretariatecnica3&#64;une.es</a>
+          </div>
+        </div>
+        
+        <div class="contact-section">
+          <h2>COMUNICACIÓN Y PRENSA</h2>
+          <div class="contact-item">
+            <h3>Rosa de Bustos</h3>
+            <p>Teléfono: 654 991 862</p>
+            <a href="mailto:prensa@une.es">prensa&#64;une.es</a>
+          </div>
+          <div class="contact-item">
+            <h3>Julia Sánchez-Arévalo Gallardo</h3>
+            <p>Teléfono: 913 600 698</p>
+            <a href="mailto:prensa2@une.es">prensa2&#64;une.es</a>
+          </div>
+        </div>
+        
+        <div class="contact-section">
+          <h2>UNEBOOK</h2>
+          <div class="contact-item">
+            <h3>Alejandro Fernández Diego</h3>
+            <p>Teléfono: 915 996 691</p>
+            <a href="mailto:alejandrof@unebook.es">alejandrof&#64;unebook.es</a>
+          </div>
+        </div>
+      </div>
     </div>
     
-    <div class="form-container">
-      <h3>Envíanos tu consulta a través de este formulario.</h3>
-      <form (ngSubmit)="onSubmit()">
+    <!--Formulario de contacto-->
+    <div class="form-container ml-5">
+      <h3 class="mb-2">Envíanos tu consulta a través de este formulario.</h3>
+      <form (ngSubmit)="onSubmit()" class="form-contact-container">
         <div class="form-group">
-          <label for="name">Tu Nombre</label>
-          <input id="name" [(ngModel)]="name" name="name" type="text" class="form-control" required>
+          <label for="name">TU NOMBRE</label>
+          <input id="name" name="name" type="text" class="form-control" required>
         </div>
         <div class="form-group">
-          <label for="email">Email</label>
-          <input id="email" [(ngModel)]="email" name="email" type="email" class="form-control" required>
+          <label for="email">EMAIL</label>
+          <input id="email" name="email" type="email" class="form-control" required>
         </div>
         <div class="form-group">
-          <label for="message">Mensaje</label>
-          <textarea id="message" [(ngModel)]="message" name="message" rows="4" class="form-control" required></textarea>
+          <label for="message">MENSAJE</label>
+          <textarea id="message" name="message" rows="4" class="form-control" required></textarea>
         </div>
-        <button type="submit" class="btn-submit">Enviar</button>
+        <button type="submit" class="btn-submit">ENVIAR</button>
       </form>
     </div>
   </div>
-  
--->

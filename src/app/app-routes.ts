@@ -13,6 +13,7 @@ import { HelpComponent } from 'src/themes/dspace/app/help-page/help-component.co
 const routes: Routes = [
   { path: 'colecciones-une', component: CollectionUnemtxListComponent },
   // otras rutas
+
 ];
 
 @NgModule({
@@ -63,6 +64,12 @@ import { provideSubmissionState } from './submission/provide-submission-state';
 import { SUGGESTION_MODULE_PATH } from './suggestions-page/suggestions-page-routing-paths';
 import { AboutComponent } from 'src/themes/dspace/app/about-page/about.component';
 import { ContactComponent } from 'src/themes/dspace/app/contact-page/contact.component';
+import { HomePageComponent } from './home-page/home-page.component';
+import { SearchPageComponent } from './search-page/search-page.component';
+import { FinderComponents } from 'src/themes/dspace/app/finder-page/finder.component';
+import { TecnologyComponent } from 'src/themes/dspace/app/tecnology-page/tecnology/tecnology.component';
+
+
 
 export const APP_ROUTES: Route[] = [
   { path: INTERNAL_SERVER_ERROR, component: ThemedPageInternalServerErrorComponent },
@@ -113,6 +120,8 @@ export const APP_ROUTES: Route[] = [
       { path: 'ayuda', component: HelpComponent },
       //GM
       { path: 'colecciones-une', component: CollectionUnemtxListComponent},
+      { path: 'buscador', component: FinderComponents},
+      { path: 'tecnologia', component: TecnologyComponent},
       
       {
         path: REGISTER_PATH,

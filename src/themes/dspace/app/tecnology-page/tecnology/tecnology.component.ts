@@ -2,12 +2,12 @@ import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
 @Component({
-  selector: 'ds-about',
+  selector: 'ds-tecnology',
   standalone: true,
   imports: [RouterModule],
-  templateUrl: './about.component.html',
-  styleUrl: './about.component.scss'
+  templateUrl: './tecnology.component.html',
+  styleUrl: './tecnology.component.scss'
 })
-export class AboutComponent {
+export class TecnologyComponent {
 
 }
