@@ -15,10 +15,12 @@
             padding: 1rem;
             margin-left: 5px;
             border-radius: 11px;
-            transition: ease-in-out 1s;
+            transition: transform 0.3s ease, box-shadow 0.3s ease; 
+            cursor: pointer; 
 
             &:hover{
-                transform: scale(.9);
+                transform: translateY(-5px); 
+                box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); 
             }
 
             h5{

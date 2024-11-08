@@ -6,3 +6,11 @@ td {
   width: 50px;
   max-width: 50px;
 }
+
+.table-striped tbody tr:nth-child(even) {
+  background-color: #fee3e6;
+}
+
+.values{
+  font-weight: bold;
+}

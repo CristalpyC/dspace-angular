@@ -1,4 +1,5 @@
-<ds-object-list [ngClass]="placeholderFontClass"
+<section class="object-list-container mt-3">
+    <ds-object-list [ngClass]="placeholderFontClass"
                 [config]="config"
                 [sortConfig]="sortConfig"
                 [objects]="objects"
@@ -74,3 +75,4 @@
                   (sortFieldChange)="onSortFieldChange($event)"
                   *ngIf="(currentMode$ | async) === viewModeEnum.Table">
 </ds-object-table>
+</section>

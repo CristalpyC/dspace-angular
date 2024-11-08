@@ -32,6 +32,7 @@ import { AbstractIncrementalListComponent } from '../abstract-incremental-list/a
 @Component({
   selector: 'ds-base-metadata-representation-list',
   templateUrl: './metadata-representation-list.component.html',
+  styleUrl: './metadata-representation-list.style.scss',
   standalone: true,
   imports: [MetadataFieldWrapperComponent, NgFor, VarDirective, MetadataRepresentationLoaderComponent, NgIf, ThemedLoadingComponent, AsyncPipe, TranslateModule],
 })

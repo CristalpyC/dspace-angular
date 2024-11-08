@@ -3,25 +3,65 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        padding-left: 12rem;
+        padding: 0rem;
         margin-top: 2rem;
         gap: 1.3rem;
     
-        .about-info-container{
-        
+        .about-info-container{        
             h2{
                 font-weight: bold;
                 margin-bottom: 1rem;
             }
         
-            p{
-                margin-bottom: 2rem;
+            ul, p{
+                margin-bottom: 1.5rem;
             }
         }
 
-        .about-info-card{
+    
+        .about-card {
+            box-shadow: 0px 8px 8px #d5d5d7;
+            border-radius: 11px;
+            width: 100%;
+            text-transform: uppercase;
+
+            li {
+                list-style: none;
+                padding: 1.2rem;
+                border-bottom: 1px solid #d5d5d7;
+                margin: 0px 8px 0px 8px;
+
+                &:hover {
+                    color: #8c212b;
+                }
+
+                &:before {
+                    content: '→';
+                    color: #8c212b;
+                    margin-right: 5px;
+                }
+            }
+
+            .special-li {
+                border-bottom: 0px;
+            }
+        }
+        .fixed-sidebar {
+            position: sticky; 
+            top: 140px;       
+            width: 100%;     
+            background-color: #fff; 
+            padding: 15px;         
+            z-index: 1000; 
+
+        }
+        
+       /* .about-info-card{
             width: 100%;
             border-radius: 11px;
+            margin-left: 10px;
+            margin-top: -8rem;
+
             //margin-top: 2rem;
 
             li{
@@ -35,7 +75,7 @@
                     margin-right: 5px;
                 }
             }
-        }
+        }*/
     }
     
    @media screen and (width <= 600px){
@@ -44,6 +84,7 @@
             justify-content: center;
             text-align: center;
             gap: 0rem;
+            text-wrap: nowrap;
         }
     }
 }
