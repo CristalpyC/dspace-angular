@@ -11,7 +11,6 @@ import { StoreModule } from '@ngrx/store';
 import { TranslateModule } from '@ngx-translate/core';
 import { ScrollToModule } from '@nicky-lenaers/ngx-scroll-to';
 
-import { RootModule } from '../../app/root.module';
 import { MetadataImportPageComponent } from './app/admin/admin-import-metadata-page/metadata-import-page.component';
 import { AdminSidebarComponent } from './app/admin/admin-sidebar/admin-sidebar.component';
 import { EditBitstreamPageComponent } from './app/bitstream-page/edit-bitstream-page/edit-bitstream-page.component';
@@ -102,6 +101,7 @@ import { ThumbnailComponent } from './app/thumbnail/thumbnail.component';
 import { WorkflowItemDeleteComponent } from './app/workflowitems-edit-page/workflow-item-delete/workflow-item-delete.component';
 import { WorkflowItemSendBackComponent } from './app/workflowitems-edit-page/workflow-item-send-back/workflow-item-send-back.component';
 import { WorkspaceItemsDeletePageComponent } from './app/workspaceitems-edit-page/workspaceitems-delete-page/workspaceitems-delete-page.component';
+import { RootModule } from 'src/app/root.module';
 
 const DECLARATIONS = [
   FileSectionComponent,

@@ -63,4 +63,20 @@
         gap: 2rem;        
     }
 
+    .article-info{
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+
+        button{
+            padding: 8px;
+            border: solid 1px gray;
+            height: 3rem;
+
+            &:hover{
+                background-color: rgb(183, 183, 183);
+            }
+        }
+    }
+
 }

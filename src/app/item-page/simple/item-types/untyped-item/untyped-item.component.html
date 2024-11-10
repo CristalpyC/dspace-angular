@@ -18,16 +18,9 @@
     <!--Autor-->
     <div class="autor-info-container">
       <h5 class="author-container">
-        <ds-metadata-representation-list
-          class="ds-item-page-mixed-author-field authors-list"
-          [parentItem]="object"
-          [itemType]="'Person'"
-          [metadataFields]="['dc.contributor.author', 'dc.creator']">
+        <ds-metadata-representation-list class="ds-item-page-mixed-author-field authors-list" [parentItem]="object"
+          [itemType]="'Person'" [metadataFields]="['dc.contributor.author', 'dc.creator']">
         </ds-metadata-representation-list>
-
-       <!-- <button class="id-btn">
-          id
-        </button>-->
       </h5>
     </div>
 
@@ -35,7 +28,7 @@
     <div class="action-btns">
       <button>Cómo citar la obra/recurso</button>
       <button>Exportar</button>
-      <button>Ver estadísticas</button>
+      <button>Ver PDF</button>
     </div>
 
   </div>
@@ -49,12 +42,12 @@
 
       <!--Información sobre los ficheros-->
       <div class="container mt-4">
-        <h5 class="fw-bold">Ficheros en este item</h5>
+        <h5 class="fw-bold">Fichero</h5>
         <table class="table table-borderless">
           <tbody>
             <tr>
               <th scope="row">Nombre</th>
-              <td>lorem_ipsum.doc</td>
+              <td><ds-generic-item-page-field [item]="object" [fields]="['dc.title']"></ds-generic-item-page-field></td>
             </tr>
             <tr>
               <th scope="row">Tamaño</th>
@@ -62,7 +55,8 @@
             </tr>
             <tr>
               <th scope="row">Formato</th>
-              <td>Documento Word</td>
+              <td><ds-generic-item-page-field [item]="object" [fields]="['dc.format']"></ds-generic-item-page-field>
+              </td>
             </tr>
             <tr>
               <th scope="row">Descripción</th>
@@ -71,7 +65,7 @@
           </tbody>
         </table>
       </div>
-      
+
 
       <!--Ocultando vista de: Palabras clave, URI y colecciones
     <ds-generic-item-page-field [item]="object"
@@ -127,6 +121,16 @@
         <ds-metadata-field-wrapper [hideIfNoTextContent]="false">
           <ds-thumbnail [thumbnail]="object?.thumbnail | async"></ds-thumbnail>
         </ds-metadata-field-wrapper>
+
+        <div class="mb-2 article-info">
+          <div>
+            <strong>Descargas</strong>
+            <p>2848</p>
+          </div>
+
+          <button>Ver estadísticas</button>
+        </div>
+
       </ng-container>
 
       <div *ngIf="mediaViewer.image || mediaViewer.video" class="mb-2">
@@ -167,15 +171,16 @@
       </tr>
       <tr>
         <th scope="row">Palabras clave</th>
-        <td style="color: #8c212b;">Consectetuer; Adipiscing elit; sed diammomummy; nibh euismod; tincidunt ut laoreet; dolore magna</td>
+        <td style="color: #8c212b;">Consectetuer; Adipiscing elit; sed diammomummy; nibh euismod; tincidunt ut laoreet;
+          dolore magna</td>
       </tr>
       <tr>
         <th scope="row">Editorial</th>
-        <td>Editorial Universidad de Alcalá</td>
+        <td><ds-generic-item-page-field [item]="object" [fields]="['dc.publisher']"></ds-generic-item-page-field></td>
       </tr>
       <tr>
         <th scope="row">Año</th>
-        <td>2024</td>
+        <td><ds-generic-item-page-field [item]="object" [fields]="['dc.date']"></ds-generic-item-page-field></td>
       </tr>
       <tr>
         <th scope="row">Número de edición</th>
@@ -195,17 +200,17 @@
       </tr>
     </tbody>
   </table>
-  
+
 
   <table class="table table-hover">
     <tbody>
       <tr>
         <th scope="row">Idioma de publicación</th>
-        <td>Lorem ipsum</td>
+        <td><ds-generic-item-page-field [item]="object" [fields]="['dc.language']"></ds-generic-item-page-field></td>
       </tr>
       <tr>
         <th scope="row">Tipo de recurso</th>
-        <td>Lorem ipsum</td>
+        <td><ds-generic-item-page-field [item]="object" [fields]="['dc.type']"></ds-generic-item-page-field></td>
       </tr>
       <tr>
         <th scope="row">Colección</th>
@@ -221,7 +226,9 @@
       </tr>
       <tr>
         <th scope="row">Handle (URI)</th>
-        <td><a href="https://handle.example/xxxxx/xxxxxxx" target="_blank">https://handle.example/xxxxx/xxxxxxx</a></td>
+        <td><a href="https://handle.example/xxxxx/xxxxxxx" target="_blank">
+            <ds-generic-item-page-field [item]="object" [fields]="['dc.identifier.uri']"></ds-generic-item-page-field>
+          </a></td>
       </tr>
       <tr>
         <th scope="row">En UNEBOOK</th>
@@ -229,12 +236,14 @@
       </tr>
       <tr>
         <th scope="row">Fecha de publicación en abierto</th>
-        <td>Lorem ipsum</td>
+        <td>
+          <ds-generic-item-page-field [item]="object" [fields]="['dc.date.accessioned']"></ds-generic-item-page-field>
+        </td>
       </tr>
       <tr>
         <th scope="row">Financiación</th>
         <td>Lorem ipsum</td>
       </tr>
     </tbody>
-  </table>  
+  </table>
 </div>
