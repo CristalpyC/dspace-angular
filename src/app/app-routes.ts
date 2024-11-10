@@ -70,6 +70,7 @@ import { FinderComponents } from 'src/themes/dspace/app/finder-page/finder.compo
 import { TecnologyComponent } from 'src/themes/dspace/app/tecnology-page/tecnology/tecnology.component';
 import { PoliciesAndServicesComponent } from 'src/themes/dspace/app/policies-page/policies-and-services/policies-and-services.component';
 import { FagsComponent } from 'src/themes/dspace/app/fags-page/fags/fags.component';
+import { CommunityPageComponent } from './community-page/community-page.component';
 
 
 
@@ -120,6 +121,8 @@ export const APP_ROUTES: Route[] = [
       { path: 'quienes-somos', component: AboutComponent },
       { path: 'contacto', component: ContactComponent },
       { path: 'ayuda', component: HelpComponent },
+      { path: 'editoriales-UNE', component: CommunityPageComponent },
+
       //GM
       { path: 'colecciones-une', component: CollectionUnemtxListComponent},
       { path: 'buscador', component: FinderComponents},

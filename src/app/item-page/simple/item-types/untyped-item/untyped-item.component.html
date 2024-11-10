@@ -167,7 +167,9 @@
     <tbody>
       <tr>
         <th scope="row">Materias</th>
-        <td>Lorem ipsum</td>
+        <td>
+          <ds-generic-item-page-field [item]="object" [fields]="['dc.subject']"></ds-generic-item-page-field>
+        </td>
       </tr>
       <tr>
         <th scope="row">Palabras clave</th>
@@ -188,7 +190,9 @@
       </tr>
       <tr>
         <th scope="row">ISBN</th>
-        <td>978-84-19745-38-5</td>
+        <td>
+          <ds-generic-item-page-field [item]="object" [fields]="['dc.identifier.isbn']"></ds-generic-item-page-field>
+        </td>
       </tr>
       <tr>
         <th scope="row">DOI</th>
