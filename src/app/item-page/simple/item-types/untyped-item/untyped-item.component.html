@@ -29,6 +29,12 @@
       <button>Cómo citar la obra/recurso</button>
       <button>Exportar</button>
       <button>Ver PDF</button>
+      <!--<button [routerLink]="['/bitstreams', object.id, 'download']">Ver PDF</button>-->
+      <!--<div>
+        <ds-file-download-link [bitstream]="file" [item]="item">
+            {{"item.page.filesection.download" | translate}}
+        </ds-file-download-link>
+    </div>!-->
     </div>
 
   </div>
@@ -42,7 +48,7 @@
 
       <!--Información sobre los ficheros-->
       <div class="container mt-4">
-        <h5 class="fw-bold">Fichero</h5>
+        <h5 class="fw-bolder">Ficheros en este item</h5>
         <table class="table table-borderless">
           <tbody>
             <tr>
@@ -57,10 +63,6 @@
               <th scope="row">Formato</th>
               <td><ds-generic-item-page-field [item]="object" [fields]="['dc.format']"></ds-generic-item-page-field>
               </td>
-            </tr>
-            <tr>
-              <th scope="row">Descripción</th>
-              <td>Lorem ipsum</td>
             </tr>
           </tbody>
         </table>
@@ -115,7 +117,7 @@
     </div>
 
     <!--Imagen y sus elementos-->
-    <div class="col-xs-12 col-md-4 item-img-info">
+    <div class="col-xs-12 col-md-6 item-img-info">
       <ng-container *ngIf="!(mediaViewer.image || mediaViewer.video)">
         <!--Imagen-->
         <ds-metadata-field-wrapper [hideIfNoTextContent]="false">
@@ -226,11 +228,11 @@
       </tr>
       <tr>
         <th scope="row">Derechos de uso</th>
-        <td>Lorem ipsum</td>
+        <td><ds-generic-item-page-field [item]="object" [fields]="['dc.rights']"></ds-generic-item-page-field></td>
       </tr>
       <tr>
         <th scope="row">Handle (URI)</th>
-        <td><a href="https://handle.example/xxxxx/xxxxxxx" target="_blank">
+        <td><a [href]="object?.metadata['dc.identifier.uri'][0].value" target="_blank">
             <ds-generic-item-page-field [item]="object" [fields]="['dc.identifier.uri']"></ds-generic-item-page-field>
           </a></td>
       </tr>

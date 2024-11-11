@@ -61,7 +61,9 @@ import { TableComponent } from 'src/themes/dspace/app/shared/table/table.compone
     AsyncPipe,
     TranslateModule,
     ItemPageCcLicenseFieldComponent,
-    TableComponent
+    TableComponent,
+    RouterLink,
+    ThemedFileSectionComponent
   ],
 })
 export class UntypedItemComponent extends ItemComponent {

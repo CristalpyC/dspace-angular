@@ -4,6 +4,7 @@ import {
 } from '@angular/cdk/tree';
 import {
   AsyncPipe,
+  CommonModule,
   NgClass,
   NgIf,
 } from '@angular/common';
@@ -29,6 +30,7 @@ import { TruncatablePartComponent } from '../../shared/truncatable/truncatable-p
 import { CommunityListDatasource } from '../community-list-datasource';
 import { CommunityListService } from '../community-list-service';
 import { FlatNode } from '../flat-node.model';
+import { ComcolPageLogoComponent } from 'src/app/shared/comcol/comcol-page-logo/comcol-page-logo.component';
 
 /**
  * A tree-structured list of nodes representing the communities, their subCommunities and collections.
@@ -42,9 +44,22 @@ import { FlatNode } from '../flat-node.model';
   templateUrl: './community-list.component.html',
   styleUrls: ['./community-list.component.scss'],
   standalone: true,
-  imports: [NgIf, ThemedLoadingComponent, CdkTreeModule, NgClass, RouterLink, TruncatableComponent, TruncatablePartComponent, AsyncPipe, TranslateModule],
+  imports: [
+    NgIf, 
+    ThemedLoadingComponent, 
+    CdkTreeModule, 
+    NgClass, 
+    RouterLink, 
+    TruncatableComponent, 
+    TruncatablePartComponent, 
+    AsyncPipe, 
+    TranslateModule, 
+    CommonModule,
+    ComcolPageLogoComponent
+  ],
 })
 export class CommunityListComponent implements OnInit, OnDestroy {
+  title: string = "Título de la Comunidad"; 
 
   private expandedNodes: FlatNode[] = [];
   public loadingNode: FlatNode;
@@ -75,6 +90,7 @@ export class CommunityListComponent implements OnInit, OnDestroy {
       this.expandedNodes = [...result];
       this.dataSource.loadCommunities(this.paginationConfig, this.expandedNodes);
     });
+    
   }
 
   ngOnDestroy(): void {
@@ -148,5 +164,4 @@ export class CommunityListComponent implements OnInit, OnDestroy {
     }
     this.dataSource.loadCommunities(this.paginationConfig, this.expandedNodes);
   }
-
 }

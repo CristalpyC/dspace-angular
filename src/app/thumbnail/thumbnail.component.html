@@ -1,4 +1,4 @@
-<div class="thumbnail" [class.limit-width]="limitWidth">
+<div class="thumbnail">
   <div *ngIf="isLoading" class="thumbnail-content outer">
     <div class="inner">
       <div class="centered">
@@ -11,9 +11,11 @@
        [src]="src | dsSafeUrl" [alt]="alt | translate" (error)="errorHandler()" (load)="successHandler()">
   <div *ngIf="src === null && !isLoading" class="thumbnail-content outer">
     <div class="inner">
+      <!--
       <div class="thumbnail-placeholder centered lead">
         {{ placeholder | translate }}
-      </div>
+      </div>-->
+      <img class="not-found-pic" src="assets/images/not-foung-pic.png" alt="">
     </div>
   </div>
 </div>
