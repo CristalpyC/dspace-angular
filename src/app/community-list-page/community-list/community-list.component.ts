@@ -10,6 +10,7 @@ import {
 } from '@angular/common';
 import {
   Component,
+  Input,
   OnDestroy,
   OnInit,
 } from '@angular/core';
@@ -31,6 +32,7 @@ import { CommunityListDatasource } from '../community-list-datasource';
 import { CommunityListService } from '../community-list-service';
 import { FlatNode } from '../flat-node.model';
 import { ComcolPageLogoComponent } from 'src/app/shared/comcol/comcol-page-logo/comcol-page-logo.component';
+import { Bitstream } from 'src/app/core/shared/bitstream.model';
 
 /**
  * A tree-structured list of nodes representing the communities, their subCommunities and collections.
@@ -63,6 +65,7 @@ export class CommunityListComponent implements OnInit, OnDestroy {
 
   private expandedNodes: FlatNode[] = [];
   public loadingNode: FlatNode;
+  @Input() logo: Bitstream;
 
   treeControl = new FlatTreeControl<FlatNode>(
     (node: FlatNode) => node.level, (node: FlatNode) => true,

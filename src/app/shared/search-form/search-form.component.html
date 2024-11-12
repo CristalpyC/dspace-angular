@@ -1,19 +1,91 @@
-<form #form="ngForm" (ngSubmit)="onSubmit(form.value)" action="/search">
-    <div>
-        <div class="form-group input-group">
-            <div *ngIf="showScopeSelector" class="input-group-prepend">
-                <button class="scope-button btn btn-outline-secondary text-truncate"
-                        [ngbTooltip]="dsoNameService.getName(selectedScope | async)" type="button"
-                        (click)="openScopeModal()">
-                  {{dsoNameService.getName(selectedScope | async) || ('search.form.scope.all' | translate)}}
-                </button>
-            </div>
-            <input type="text" [(ngModel)]="query" name="query" class="form-control"
-                   [attr.aria-label]="searchPlaceholder" [attr.data-test]="'search-box' | dsBrowserOnly"
-                   [placeholder]="searchPlaceholder">
-            <span class="input-group-append">
-            <button type="submit" class="search-button btn btn-{{brandColor}}" [attr.data-test]="'search-button' | dsBrowserOnly"><i class="fas fa-search"></i> {{ ('search.form.search' | translate) }}</button>
-        </span>
-        </div>
+<form #form="ngForm" (ngSubmit)="onSubmit(form.value)" class="search-form">
+    <div class="search-container">
+      <!-- Campo de texto -->
+      <input
+        type="text"
+        [(ngModel)]="query"
+        name="query"
+        class="search-input"
+        [placeholder]="'Tu búsqueda'"
+        aria-label="Search input"
+      />
+  
+      <!-- Selector -->
+      <div class="search-dropdown">
+        <button
+          type="button"
+          class="dropdown-button"
+          (click)="openScopeModal()"
+        >
+          Cualquier campo
+          <i class="fas fa-chevron-down"></i>
+        </button>
+      </div>
     </div>
-</form>
+  </form>
+
+  <!--
+  .search-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.search-container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 600px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  overflow: hidden;
+  background-color: #fff;
+
+  // Campo de texto
+  .search-input {
+    flex: 1;
+    border: none;
+    padding: 12px 16px;
+    font-size: 16px;
+    color: #333;
+    outline: none;
+
+    &::placeholder {
+      color: #aaa;
+    }
+  }
+
+  // Selector del dropdown
+  .search-dropdown {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    border-left: 1px solid #ccc;
+
+    .dropdown-button {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 5px;
+      padding: 12px 16px;
+      font-size: 16px;
+      color: #333;
+      background: none;
+      border: none;
+      cursor: pointer;
+      outline: none;
+
+      i {
+        font-size: 12px;
+        color: #777;
+      }
+
+      &:hover {
+        background-color: #f7f7f7;
+      }
+    }
+  }
+}
+-->

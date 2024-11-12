@@ -11,6 +11,7 @@ import { StartsWithTextComponent } from '../shared/starts-with/text/starts-with-
 @Component({
   selector: 'ds-base-community-list-page',
   templateUrl: './community-list-page.component.html',
+  styleUrl: './community-list-page.style.scss',
   standalone: true,
   imports: [ ThemedCommunityListComponent, TranslateModule, StartsWithTextComponent],
 })
