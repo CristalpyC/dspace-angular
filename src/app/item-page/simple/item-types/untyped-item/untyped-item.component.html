@@ -175,8 +175,9 @@
       </tr>
       <tr>
         <th scope="row">Palabras clave</th>
-        <td style="color: #8c212b;">Consectetuer; Adipiscing elit; sed diammomummy; nibh euismod; tincidunt ut laoreet;
-          dolore magna</td>
+        <td style="color: #8c212b;">
+          <ds-generic-item-page-field [item]="object" [fields]="['dc.subject.keyword']"></ds-generic-item-page-field>
+        </td>
       </tr>
       <tr>
         <th scope="row">Editorial</th>
@@ -188,7 +189,7 @@
       </tr>
       <tr>
         <th scope="row">Número de edición</th>
-        <td>Lorem ipsum</td>
+        <td><ds-generic-item-page-field [item]="object" [fields]="['dc.description.version']"></ds-generic-item-page-field></td>
       </tr>
       <tr>
         <th scope="row">ISBN</th>
@@ -198,11 +199,11 @@
       </tr>
       <tr>
         <th scope="row">DOI</th>
-        <td><a href="https://doi.org/xxxxx/xxxxxxx" target="_blank">https://doi.org/xxxxx/xxxxxxx</a></td>
+        <td><ds-generic-item-page-field [item]="object" [fields]="['dc.identifier']"></ds-generic-item-page-field></td>
       </tr>
       <tr>
         <th scope="row">Licencia</th>
-        <td>Lorem ipsum</td>
+        <td><ds-generic-item-page-field [item]="object" [fields]="['dc.right.license']"></ds-generic-item-page-field></td>
       </tr>
     </tbody>
   </table>
@@ -220,11 +221,11 @@
       </tr>
       <tr>
         <th scope="row">Colección</th>
-        <td>Lorem ipsum</td>
+        <td><ds-generic-item-page-field [item]="object" [fields]="['dc.identifier.other']"></ds-generic-item-page-field></td>
       </tr>
       <tr>
         <th scope="row">Materias controladas</th>
-        <td>Lorem ipsum</td>
+        <td></td>
       </tr>
       <tr>
         <th scope="row">Derechos de uso</th>
@@ -238,17 +239,17 @@
       </tr>
       <tr>
         <th scope="row">En UNEBOOK</th>
-        <td>Lorem ipsum</td>
+        <td></td>
       </tr>
       <tr>
         <th scope="row">Fecha de publicación en abierto</th>
         <td>
-          <ds-generic-item-page-field [item]="object" [fields]="['dc.date.accessioned']"></ds-generic-item-page-field>
+          <ds-generic-item-page-field [item]="object" [fields]="['dc.date.available']"></ds-generic-item-page-field>
         </td>
       </tr>
       <tr>
         <th scope="row">Financiación</th>
-        <td>Lorem ipsum</td>
+        <td></td>
       </tr>
     </tbody>
   </table>
