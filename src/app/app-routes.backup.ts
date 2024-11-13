@@ -90,6 +90,11 @@ export const APP_ROUTES: Route[] = [
       //Agregando rutas extra: About y contacto
       { path: 'quienes-somos', component: AboutComponent },
       { path: 'contacto', component: ContactComponent },
+
+      { path: 'buscador', component: FinderComponents },
+      { path: 'tecnologia', component: TecnologyComponent },
+      {path:'politica-servicios', component:PoliciesAndServicesComponent},
+      {path:'fags', component: FagsComponent},
       
       {
         path: REGISTER_PATH,
@@ -280,6 +285,11 @@ export const APP_ROUTING_SCROLL_CONF: InMemoryScrollingOptions = {
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CollectionUnemtxListComponent } from './collection-unemtx-list/collection-unemtx-list.component';
+import { FinderComponents } from 'src/themes/dspace/app/finder-page/finder.component';
+import { TecnologyComponent } from 'src/themes/dspace/app/tecnology-page/tecnology/tecnology.component';
+import { PoliciesAndServicesComponent } from 'src/themes/dspace/app/policies-page/policies-and-services/policies-and-services.component';
+import { FagsComponent } from 'src/themes/dspace/app/fags-page/fags/fags.component';
+
 
 const routes: Routes = [
   { path: 'colecciones-une', component: CollectionUnemtxListComponent },

@@ -1,0 +1,12 @@
+:host{
+    .social-media-container{
+        display: flex;
+        gap: 5px;
+    
+        div{
+            background-color: #d5d5d7;
+            border-radius: 5rem;
+            padding: 5px;
+        }
+    }
+}

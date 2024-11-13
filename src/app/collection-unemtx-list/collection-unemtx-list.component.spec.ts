@@ -10,8 +10,8 @@ describe('CollectionUnemtxListComponent', () => {
     await TestBed.configureTestingModule({
       imports: [CollectionUnemtxListComponent]
     })
-    .compileComponents();
-    
+      .compileComponents();
+
     fixture = TestBed.createComponent(CollectionUnemtxListComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

@@ -1,2 +1,85 @@
 @import '../../../../../styles/variables.scss';
 
+:host{
+    h5{
+        font-weight: bold;
+    }
+    .item-link-btn{
+        Border-radius: 3px;
+        font-weight: bold;
+        background-color: #8c212b;
+        border: none;
+        box-shadow: 0px 5px 8px gray;
+        color: white;
+
+        &:hover{
+            background-color: #9c343f;
+        }
+    }
+
+    .item-img-info{
+        background-color: #dadff0;
+        width: 100%;
+        padding: 1.5rem;
+
+        .item-img-info-container{
+            margin-top: 10rem;
+        }
+    }
+
+    /*
+    .autor-info-container{
+        display: flex;
+        gap: 2px;
+
+        .ds-item-page-mixed-author-field {
+            display: flex;
+            flex-direction: column;
+            margin-right: 8px; 
+          }*/
+
+        /*.id-btn{
+            background-color: rgb(167, 226, 78);
+            color: white;
+            border-radius: 8rem;
+            padding: 2px;
+            text-transform: uppercase;
+            border: none;
+            margin-bottom: 1rem;
+            align-self: center;
+        }*/
+    }
+
+    .action-btns{
+        button{
+            margin-right: 8px;
+            border: solid 1px gray;
+
+            &:hover{
+                background-color: rgb(183, 183, 183);
+            }
+        }
+    }
+
+    .tables-container{
+        margin-top: 2rem;
+        display: flex;
+        gap: 2rem;        
+    }
+
+    .article-info{
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+
+        button{
+            padding: 8px;
+            border: solid 1px gray;
+            height: 3rem;
+
+            &:hover{
+                background-color: rgb(183, 183, 183);
+            }
+        }
+    }
+

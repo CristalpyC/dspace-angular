@@ -21,6 +21,7 @@ import { ImpersonateNavbarComponent } from '../../../../app/shared/impersonate-n
 import { AboutComponent } from '../about-page/about.component';
 import { ContactComponent } from '../contact-page/contact.component';
 import { Observable, of } from 'rxjs';
+import { SocialMediaComponent } from '../shared/social-media/social-media.component';
 
 /**
  * Component representing the public navbar
@@ -31,12 +32,14 @@ import { Observable, of } from 'rxjs';
   templateUrl: './navbar.component.html',
   animations: [slideMobileNav],
   standalone: true,
-  imports: [NgbDropdownModule, ThemedLangSwitchComponent, ThemedSearchNavbarComponent, NgClass, RouterLink, NgIf, NgFor, NgComponentOutlet, ContextHelpToggleComponent, ThemedAuthNavMenuComponent, ImpersonateNavbarComponent, AsyncPipe, TranslateModule, ThemedUserMenuComponent, RouterModule],
+  imports: [NgbDropdownModule, ThemedLangSwitchComponent, ThemedSearchNavbarComponent, NgClass, RouterLink, NgIf, NgFor, NgComponentOutlet, ContextHelpToggleComponent, ThemedAuthNavMenuComponent, ImpersonateNavbarComponent, AsyncPipe, TranslateModule, ThemedUserMenuComponent, RouterModule, SocialMediaComponent],
 })
 export class NavbarComponent extends BaseComponent {
   sectionMap = [
+    { label: 'INICIO', route: '/home' },
     { label: 'QUIENES SOMOS', route: '/quienes-somos' },
-    { label: 'EDITORIALES UNE', route: '/editoriales-une' },
+    { label: 'EDITORIALES UNE', route: '/community-list' },
+    { label: 'ESTADISTICAS', route: '/statistics' },
     { label: 'CONTACTO', route: '/contacto' },
     { label: 'AYUDA', route: '/ayuda' }
   ];

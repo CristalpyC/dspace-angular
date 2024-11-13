@@ -28,6 +28,7 @@ import { ThemedItemPageTitleFieldComponent } from '../../field-components/specif
 import { ItemPageUriFieldComponent } from '../../field-components/specific-field/uri/item-page-uri-field.component';
 import { ThemedMetadataRepresentationListComponent } from '../../metadata-representation-list/themed-metadata-representation-list.component';
 import { ItemComponent } from '../shared/item.component';
+import { TableComponent } from 'src/themes/dspace/app/shared/table/table.component';
 
 /**
  * Component that represents a publication Item page
@@ -60,6 +61,11 @@ import { ItemComponent } from '../shared/item.component';
     AsyncPipe,
     TranslateModule,
     ItemPageCcLicenseFieldComponent,
+    TableComponent,
+    RouterLink,
+    ThemedFileSectionComponent
   ],
 })
-export class UntypedItemComponent extends ItemComponent {}
+export class UntypedItemComponent extends ItemComponent {
+
+}

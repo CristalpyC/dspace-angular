@@ -1,0 +1,47 @@
+<section class="help-container m-auto text-center w-50">
+    <p class="my-3">
+      ¿Cómo podemos ayudarte?
+    </p>
+    <div class="form-group">
+      <input name="search" type="text" placeholder="Escribe tu pregunta aquí" class="form-control">
+    </div>
+  
+    <div class="row">
+      <!-- Primer bucle: las primeras 3 cartas -->
+      <ng-container *ngFor="let card of helpCards; let i = index">
+        <div *ngIf="i < 3" class="col-md-4 col-sm-12 mb-4">
+          <a [routerLink]="card.link || '#'" class="card-link"> 
+            <div class="card h-100 shadow-sm hover-card">
+              <div class="card-body">
+                <div class="mb-3 text-center">
+                  <i class="fas" [ngClass]="card.icon + ' fa-4x text-danger'"></i>
+                </div>
+                <h3 class="card-title">{{ card.title }}</h3>
+                <h5 class="card-text">{{ card.description }}</h5>
+              </div>
+            </div>
+          </a>
+        </div>
+      </ng-container>
+    </div>
+  
+    <div class="row">
+      <!-- Segundo bucle: las siguientes 2 cartas -->
+      <ng-container *ngFor="let card of helpCards; let i = index">
+        <div *ngIf="i >= 3" class="col-md-6 col-sm-12 mb-4">
+          <a [routerLink]="card.link || '#'" class="card-link"> 
+            <div class="card h-100 shadow-sm hover-card">
+              <div class="card-body">
+                <div class="mb-3 text-center">
+                  <i class="fas" [ngClass]="card.icon + ' fa-4x text-danger'"></i>
+                </div>
+                <h3 class="card-title">{{ card.title }}</h3>
+                <h5 class="card-text">{{ card.description }}</h5>
+              </div>
+            </div>
+          </a>
+        </div>
+      </ng-container>
+    </div>
+  </section>
+  

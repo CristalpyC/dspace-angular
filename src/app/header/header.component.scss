@@ -1,6 +1,7 @@
 :host {
   header {
     background-color: var(--ds-header-bg);
+   
   }
 
   .navbar-brand img {
@@ -12,7 +13,8 @@
     border: none;
     color: var(--ds-header-icon-color);
 
-    &:hover, &:focus {
+    &:hover,
+    &:focus {
       color: var(--ds-header-icon-color-hover);
     }
 

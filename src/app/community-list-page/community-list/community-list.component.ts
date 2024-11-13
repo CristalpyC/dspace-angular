@@ -4,11 +4,13 @@ import {
 } from '@angular/cdk/tree';
 import {
   AsyncPipe,
+  CommonModule,
   NgClass,
   NgIf,
 } from '@angular/common';
 import {
   Component,
+  Input,
   OnDestroy,
   OnInit,
 } from '@angular/core';
@@ -29,6 +31,8 @@ import { TruncatablePartComponent } from '../../shared/truncatable/truncatable-p
 import { CommunityListDatasource } from '../community-list-datasource';
 import { CommunityListService } from '../community-list-service';
 import { FlatNode } from '../flat-node.model';
+import { ComcolPageLogoComponent } from 'src/app/shared/comcol/comcol-page-logo/comcol-page-logo.component';
+import { Bitstream } from 'src/app/core/shared/bitstream.model';
 
 /**
  * A tree-structured list of nodes representing the communities, their subCommunities and collections.
@@ -42,12 +46,32 @@ import { FlatNode } from '../flat-node.model';
   templateUrl: './community-list.component.html',
   styleUrls: ['./community-list.component.scss'],
   standalone: true,
-  imports: [NgIf, ThemedLoadingComponent, CdkTreeModule, NgClass, RouterLink, TruncatableComponent, TruncatablePartComponent, AsyncPipe, TranslateModule],
+  imports: [
+    NgIf, 
+    ThemedLoadingComponent, 
+    CdkTreeModule, 
+    NgClass, 
+    RouterLink, 
+    TruncatableComponent, 
+    TruncatablePartComponent, 
+    AsyncPipe, 
+    TranslateModule, 
+    CommonModule,
+    ComcolPageLogoComponent
+  ],
 })
 export class CommunityListComponent implements OnInit, OnDestroy {
+  title: string = "Título de la Comunidad"; 
 
+  getCommunityLogo(community: any): string {
+    if (community?.logo?.id) {
+      return `https://dspace-laboratorio.glaux.es/server/api/core/bitstreams/${community.logo.id}/content`;
+    }
+    return 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjLRAt1FYPP3s5KB3wo4JfJ4WoKU2cPXzvbwd1bGwBPkg65ynXakFdJNv9YWF4IsyaNnb3aWooaTxDrJqSEKA8B8y-An1IiV33_Xf3t-7qnMoNudK9poadh6L27uOQ1L3XYDJ21Wc42eBo/s1600/editorial.jpg'; // Imagen por defecto si no hay logo
+}
   private expandedNodes: FlatNode[] = [];
   public loadingNode: FlatNode;
+  @Input() logo: Bitstream;
 
   treeControl = new FlatTreeControl<FlatNode>(
     (node: FlatNode) => node.level, (node: FlatNode) => true,
@@ -75,6 +99,7 @@ export class CommunityListComponent implements OnInit, OnDestroy {
       this.expandedNodes = [...result];
       this.dataSource.loadCommunities(this.paginationConfig, this.expandedNodes);
     });
+    
   }
 
   ngOnDestroy(): void {
@@ -148,5 +173,4 @@ export class CommunityListComponent implements OnInit, OnDestroy {
     }
     this.dataSource.loadCommunities(this.paginationConfig, this.expandedNodes);
   }
-
 }

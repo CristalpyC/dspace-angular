@@ -115,6 +115,7 @@ const loadingNodeSelector = createSelector(communityListStateSelector, (communit
 export class CommunityListService {
 
   private pageSize: number;
+  getCommunityData: any;
 
   constructor(
     @Inject(APP_CONFIG) protected appConfig: AppConfig,

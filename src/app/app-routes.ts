@@ -4,6 +4,26 @@ import {
   RouterConfigOptions,
 } from '@angular/router';
 
+//AQUI CODIGO CUSTOMIZADO - MUESTRA LA LISTA DE COLECCIONES DE LA UNE
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
+import { CollectionUnemtxListComponent } from './collection-unemtx-list/collection-unemtx-list.component';
+import { HelpComponent } from 'src/themes/dspace/app/help-page/help-component.component';
+
+const routes: Routes = [
+  { path: 'colecciones-une', component: CollectionUnemtxListComponent },
+  // otras rutas
+
+];
+
+@NgModule({
+  imports: [RouterModule.forRoot(routes)],
+  exports: [RouterModule]
+})
+export class AppRoutingModule { }
+
+//FINALIZA AQUÍ
+
 import { NOTIFICATIONS_MODULE_PATH } from './admin/admin-routing-paths';
 import {
   ACCESS_CONTROL_MODULE_PATH,
@@ -44,6 +64,15 @@ import { provideSubmissionState } from './submission/provide-submission-state';
 import { SUGGESTION_MODULE_PATH } from './suggestions-page/suggestions-page-routing-paths';
 import { AboutComponent } from 'src/themes/dspace/app/about-page/about.component';
 import { ContactComponent } from 'src/themes/dspace/app/contact-page/contact.component';
+import { HomePageComponent } from './home-page/home-page.component';
+import { SearchPageComponent } from './search-page/search-page.component';
+import { FinderComponents } from 'src/themes/dspace/app/finder-page/finder.component';
+import { TecnologyComponent } from 'src/themes/dspace/app/tecnology-page/tecnology/tecnology.component';
+import { PoliciesAndServicesComponent } from 'src/themes/dspace/app/policies-page/policies-and-services/policies-and-services.component';
+import { FagsComponent } from 'src/themes/dspace/app/fags-page/fags/fags.component';
+import { CommunityPageComponent } from './community-page/community-page.component';
+
+
 
 export const APP_ROUTES: Route[] = [
   { path: INTERNAL_SERVER_ERROR, component: ThemedPageInternalServerErrorComponent },
@@ -87,9 +116,19 @@ export const APP_ROUTES: Route[] = [
           .then((m) => m.ROUTES),
         canActivate: [endUserAgreementCurrentUserGuard],
       },
-      //Agregando rutas extra: About y contacto
+
+      //Agregando rutas extra: About, contacto y ayuda
       { path: 'quienes-somos', component: AboutComponent },
       { path: 'contacto', component: ContactComponent },
+      { path: 'ayuda', component: HelpComponent },
+      { path: 'editoriales-UNE', component: CommunityPageComponent },
+
+      //GM
+      { path: 'colecciones-une', component: CollectionUnemtxListComponent},
+      { path: 'buscador', component: FinderComponents},
+      { path: 'tecnologia', component: TecnologyComponent},
+      {path:'politica-servicios', component:PoliciesAndServicesComponent},
+      {path:'fags', component: FagsComponent},
       
       {
         path: REGISTER_PATH,
@@ -276,18 +315,5 @@ export const APP_ROUTING_SCROLL_CONF: InMemoryScrollingOptions = {
 };
 
 
-//AQUI CODIGO CUSTOMIZADO - MUESTRA LA LISTA DE COLECCIONES DE LA UNE
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
-import { CollectionUnemtxListComponent } from './collection-unemtx-list/collection-unemtx-list.component';
 
-const routes: Routes = [
-  { path: 'colecciones-une', component: CollectionUnemtxListComponent },
-  // otras rutas
-];
 
-@NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
-})
-export class AppRoutingModule { }

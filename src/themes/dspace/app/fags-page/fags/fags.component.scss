@@ -1,0 +1,35 @@
+/* Estilo general para la sección de preguntas frecuentes */
+.faq-section {
+    margin: 20px auto;
+    max-width: 800px;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    color: #333;
+  }
+  
+  .faq-title {
+    font-size: 2rem; 
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #8c212b; 
+  }
+  
+  .faq-list {
+    list-style-type: decimal; 
+    padding-left: 20px;
+  }
+  
+  .faq-list li {
+    font-size: 1.1rem; 
+    margin-bottom: 12px; 
+    line-height: 1.5;
+  }
+  
+ 
+//   .faq-list li:hover {
+//     color: #8c212b;
+//     cursor: pointer;
+//     text-decoration: underline;
+//   }
+  
