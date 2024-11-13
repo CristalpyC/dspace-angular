@@ -27,7 +27,7 @@
           <!-- Community logo -->
            <!--Debe mostrar la imagen de los editoriales-->
           <img class="card-img-left" 
-              [src]="node.payload.imageUrl || 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjLRAt1FYPP3s5KB3wo4JfJ4WoKU2cPXzvbwd1bGwBPkg65ynXakFdJNv9YWF4IsyaNnb3aWooaTxDrJqSEKA8B8y-An1IiV33_Xf3t-7qnMoNudK9poadh6L27uOQ1L3XYDJ21Wc42eBo/s1600/editorial.jpg'" 
+              [src]="getCommunityLogo(node.payload.id)" 
               alt="Logo de {{ dsoNameService.getName(node.payload) }}"
               style="width: 50%; object-fit: cover; border-radius: 11px;"
             >
@@ -41,7 +41,7 @@
 </section>
 
 <!--Datos provisionales-->
-<ds-loading *ngIf="(dataSource.loading$ | async) && !loadingNode" class="ds-themed-loading"></ds-loading>
+<!--<ds-loading *ngIf="(dataSource.loading$ | async) && !loadingNode" class="ds-themed-loading"></ds-loading>
 <cdk-tree [dataSource]="dataSource" [treeControl]="treeControl" [trackBy]="trackBy">
   <cdk-tree-node *cdkTreeNodeDef="let node; when: isShowMore" cdkTreeNodePadding
   class="example-tree-node show-more-node">
@@ -127,4 +127,4 @@ cdkTreeNodePadding>
 </div>
 </ds-truncatable>
 </cdk-tree-node>
-</cdk-tree>
+</cdk-tree>-->

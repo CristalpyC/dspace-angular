@@ -63,6 +63,12 @@ import { Bitstream } from 'src/app/core/shared/bitstream.model';
 export class CommunityListComponent implements OnInit, OnDestroy {
   title: string = "Título de la Comunidad"; 
 
+  getCommunityLogo(community: any): string {
+    if (community?.logo?.id) {
+      return `https://dspace-laboratorio.glaux.es/server/api/core/bitstreams/${community.logo.id}/content`;
+    }
+    return 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjLRAt1FYPP3s5KB3wo4JfJ4WoKU2cPXzvbwd1bGwBPkg65ynXakFdJNv9YWF4IsyaNnb3aWooaTxDrJqSEKA8B8y-An1IiV33_Xf3t-7qnMoNudK9poadh6L27uOQ1L3XYDJ21Wc42eBo/s1600/editorial.jpg'; // Imagen por defecto si no hay logo
+}
   private expandedNodes: FlatNode[] = [];
   public loadingNode: FlatNode;
   @Input() logo: Bitstream;
